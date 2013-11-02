@@ -1,0 +1,55 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <style>
+        .alert .btn{
+            margin-right: 10px;
+        }
+    </style>
+    <form method="post" id="formongoose">
+        {{ form_rest(form) }}
+        <input type="hidden" id="hidden-user" value="{{ user.id }}">
+        <input type="submit" class="btn">
+    </form>
+    <hr>
+    {#<h3>Les messages de {{ user.firstname }}</h3>#}
+    <h1>Les messages</h1>
+    <div id="les-messages">
+        {% for message in messages %}
+            <div class="alert alert-block" id="{{ message.id }}">
+                <h3>{{ message.title }}</h3>
+                <p>{{ message.description }}</p>
+                {#{% if message.parent %}#}
+                    {#<li>Titre du message parent : {{ message.parent.title }}</li>#}
+                {#{% endif %}#}
+
+            <div class="clear"></div>
+            <div class="hide repondre">
+                <textarea id="answer" class="form-control" placeholder="Répondre à ce message..." ></textarea>
+                <a class="btn btn-inverse pull-right">Valider</a>
+            </div>
+                <div class="clear"></div>
+                <a class="btn btn-success pull-right" data-id="{{ message.id }}"><span class="fui-heart"></span></span> Coup de coeur</a>
+                <a class="write btn btn-info pull-right" data-id="{{ message.id }}"><span class="fui-new"></span> Répondre ce message</a>
+                <a class="remove btn btn-danger pull-right" data-id="{{ message.id }}"><span class="fui-cross"></span> Supprimer ce message</a>
+                <div class="clear"></div>
+
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@MyFuckinJobSiteBundle/Resources/public/js/mongoose.js'  %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}

@@ -1,0 +1,211 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: '@MyFuckinJobSiteBundle/Resources/config/config.yml' }
+    - { resource: '@MyFuckinJobSiteBundle/Resources/config/services.xml' }
+
+framework:
+    #esi:             ~
+    #translator:      { fallback: %locale% }
+    secret:          %secret%
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    trusted_proxies: ~
+    session:         ~
+    fragments:       ~
+    http_method_override: true
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'MyFuckinJobSiteBundle:Form:error.html.twig'
+
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        ["MyFuckinJobSiteBundle"]
+    #java: /usr/bin/java
+    filters:
+#         cssrewrite: ~
+#         uglifyjs:
+#          bin: '/usr/local/bin/uglifyjs'
+#         less:
+#            node: /usr/local/bin/node
+#            node_paths: [/usr/local/lib/node, /usr/local/lib/node_modules]
+         coffee:
+            bin: /usr/bin/coffee
+            node: /usr/bin/node
+            apply_to: "\.coffee$"
+         sass:
+            bin: /usr/local/bin/sass
+         compass:
+            bin: /usr/local/bin/compass
+            apply_to: "\.s[ac]ss$"
+         yui_css:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+#         yui_js:
+#            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+         closure:
+            jar: "%kernel.root_dir%/Resources/java/googleclosure.jar"
+         jpegoptim:
+             bin: '/usr/bin/jpegoptim'
+             strip_all: true
+
+        #closure:
+        #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
+        #yui_css:
+        #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+
+
+#Pagination
+knp_paginator:
+  page_range: 5                      # default page range used in pagination control
+  default_options:
+    page_name: page                # page query parameter name
+    sort_field_name: sort          # sort field query parameter name
+    sort_direction_name: direction # sort direction query parameter name
+    distinct: false                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+  template:
+    pagination: MyFuckinJobSiteBundle:Pagination:sliding.html.twig     # sliding pagination controls template
+    sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+
+
+# Doctrine Extensions
+stof_doctrine_extensions:
+    orm:
+      default:
+          sluggable: true
+          timestampable: true
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   %database_driver%
+        host:     %database_host%
+        port:     %database_port%
+        dbname:   %database_name%
+        user:     %database_user%
+        password: %database_password%
+        charset:  UTF8
+        # if using pdo_sqlite as your database driver, add the path in parameters.yml
+        # e.g. database_path: %kernel.root_dir%/data/data.db3
+        # path:     %database_path%
+
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: %mailer_transport%
+    host:      %mailer_host%
+    username:  %mailer_user%
+    password:  %mailer_password%
+    spool:     { type: memory }
+
+#sphinx config
+sphinxsearch:
+    indexes:
+      Alpha: Alpha
+    searchd:
+        host:   localhost
+        port:   9312
+    indexer:
+        bin:    /usr/bin/indexer
+#    mapping:
+#        Users:
+#           repository: "WksSiteBundle:Users"    #Doctrine repository name
+#           parameter: "Users"           #returned by sphinx. By this parameter Bundle will choose repository
+#           value: 1                          #uniq value for paramete: tru or falser
+
+
+#Security Optimization
+nelmio_security:
+    # signs/verifies all cookies
+#    signed_cookie:
+#        secret: s5ddhg46hj46hgsdf65s46846sd46fsd56d56g4d8f6h4df6g # defaults to global %secret%
+#        hash_algo: sha1 # defaults to sha256
+#        names: ['*']
+    # encrypt all cookies
+    encrypted_cookie:
+        names: ['*']
+    # prevents framing of the entire site
+    clickjacking:
+        paths:
+            '^/.*': DENY
+    # prevents redirections outside the website's domain
+    external_redirects:
+        abort: false
+        log: true
+
+    # forced HTTPS handling, don't combine with flexible mode
+    # and make sure you have SSL working on your site before enabling this
+#    forced_ssl: ~
+#        hsts_max_age: 2592000 # 30 days
+#        hsts_subdomains: true
+
+    # flexible HTTPS handling, read the detailed config info
+    # and make sure you have SSL working on your site before enabling this
+#    flexible_ssl:
+#        cookie_name: auth
+#        unsecured_logout: false
+
+# Services Twig
+services:
+#   session.memcached:
+#      class: Memcached
+#      arguments:
+#          persistent_id: %session_memcached_prefix%
+#      calls:
+#          - [ addServer, [ %session_memcached_host%, %session_memcached_port% ]]
+#
+#   session.handler.memcached:
+#      class:     Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler
+#      arguments: [@session.memcached, { prefix: %session_memcached_prefix%, expiretime: %session_memcached_expire% }]
+#   memcached:
+#        class: Memcached
+#        calls:
+#            - [ addServers, [ %memcached.servers% ]]
+   twig.extension.text:
+       class: Twig_Extensions_Extension_Text
+       tags:
+           - { name: twig.extension }
+#   Ajoute un tag debugé qui affiche le context courant du template
+   twig.extension.debug:
+       class: Twig_Extensions_Extension_Debug
+       tags:
+           - { name: twig.extension }
+##   Ajoute un filtre  qui permet de formater une date en prenant en compte la langue (basée sur la locale) de la session courante de sf2.
+##Ce filtre utilise la classe IntlDateFormatter de php.
+   twig.extension.intl:
+       class: Twig_Extensions_Extension_Intl
+       tags:
+           - { name: twig.extension }
+
+   project.twig.extension:
+        class:  MyFuckinJob\SiteBundle\Extension\Twig\MyTwigExtension
+        tags:
+            -  { name: twig.extension }
+
+
+doctrine_mongodb:
+    connections:
+        default:
+            server: mongodb://localhost:27017
+            options: {}
+    default_database: mongo
+    document_managers:
+      default:
+        auto_mapping: true

@@ -1,0 +1,75 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+    <h2><span class="fui-plus"></span> Inscription étape 2</h2>
+
+    <ol class="breadcrumb">
+        <li><a href="#">Inscription Etape 1</a></li>
+        <li><a href="#">Inscription Etape 2</a></li>
+        <li><a href="#">Inscription Etape 3</a></li>
+    </ol>
+
+    <div class="offset1">
+        <form action="{{ path('inscription_etape2') }}"  method="post" id="inscription" novalidate="novalidate">
+            <div class="span8">
+                <label for="">Je suis</label>
+                {{ form_widget(form.metier) }}
+            </div>
+
+            <div class="span8">
+                <label for="">Prénom</label>
+                {{ form_widget(form.firstname) }}
+            </div>
+
+            <div class="span8">
+                <label for="">Nom</label>
+                {{ form_widget(form.lastname) }}
+            </div>
+
+            <div class="span8">
+                <label for="">Email</label>
+                {{ form_widget(form.email) }}
+            </div>
+
+            <div class="span8">
+                <label for="">Date de naissance</label>
+                {{ form_widget(form.dob) }}
+            </div>
+
+            <div class="span8">
+                <label for="">Ville</label>
+                {{ form_widget(form.ville) }}
+            </div>
+
+            <div class="span8">
+                <label for="">CGU</label>
+                {{ form_widget(form.cgu) }}
+            </div>
+
+            <button type="submit" class="btn btn-block btn-lg btn-primary">
+                <i class="icon-ok"></i>Continuer
+            </button>
+            {{ form_widget(form._token) }}
+        </form>
+   </div>
+{% endblock %}
+
+{#Css And JS Files#}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@MyFuckinJobSiteBundle/Resources/public/css/sass/horaires.sass' filter='yui_css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/inscription_step2.coffee' filter='closure' %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+{#End Css And JS Files#}

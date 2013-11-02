@@ -1,0 +1,124 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Blabla...
+{% endblock %}
+
+{% block description %}
+    Blabla...
+{% endblock %}
+
+{% block keywords %}
+    Blabla...
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href='http://labs.bigroomstudios.com/source/css/apprise-v2.css' rel='stylesheet' />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400" />
+    <link href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400" />
+    <link href='http://labs.bigroomstudios.com/source/css/apprise-v2.css' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400" />
+    {% stylesheets
+        '@MyFuckinJobSiteBundle/Resources/public/css/sass/apprise.sass' filter='yui_css' %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+    {% stylesheets
+        '@MyFuckinJobSiteBundle/Resources/public/css/sass/main.sass' filter='yui_css' %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block headjavascript %}
+    {{ parent() }}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    {#&#123;&#35;Custom UI Checkbox, Select, Radio&#35;&#125;#}
+    {#{% stylesheets '@MyFuckinJobSiteBundle/Resources/public/css/sass/customform.sass' filter='yui_css' %}#}
+    {#<link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>#}
+    {#{% endstylesheets %}#}
+
+    {#<script type="text/javascript" src="{{ asset('bundles/site/js/jquery.icheck.min.js') }}"></script>#}
+    {#{% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/customform.coffee' filter='closure' %}#}
+    {#<script src="{{ asset_url }}" type="text/javascript"></script>#}
+    {#{% endjavascripts %}#}
+
+    {#<script type="text/javascript" src="http://ns3296046.ovh.net:1666/socket.io/socket.io.js"></script>#}
+{% endblock %}
+
+{% block body %}
+    {% block header %}
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">My Fuckin Job</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li {% if app.request.attributes.get('_route') == 'home' %}class="active"{% endif %}><a href="{{ path('home') }}">Home</a></li>
+                        <li {% if app.request.attributes.get('_route') == 'inscription' %}class="active"{% endif %}><a href="{{ path('inscription') }}">Inscription</a></li>
+                        <li {% if app.request.attributes.get('_route') == 'myaccount' %}class="active"{% endif %}><a href="{{ path('myaccount') }}">Profil</a></li>
+                        <li {% if app.request.attributes.get('_route') == 'myquestions' %}class="active"{% endif %}><a href="{{ path('myquestions') }}">Questions</a></li>
+                        <li {% if app.request.attributes.get('_route') == 'myentretiens' %}class="active"{% endif %}><a href="{{ path('myentretiens') }}">Entretiens</a></li>
+                        <li {% if app.request.attributes.get('_route') == 'mydisponibilites' %}class="active"{% endif %}><a href="{{ path('mydisponibilites') }}">Disponibilités</a></li>
+                        <li {% if app.request.attributes.get('_route') == 'myrecherche' %}class="active"{% endif %}><a href="{{ path('myrecherche') }}">Recherche</a></li>
+                        <li {% if app.request.attributes.get('_route') == 'mypreferences' %}class="active"{% endif %}><a href="{{ path('mypreferences') }}">Préférences</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    {% endblock %}
+        {% block wrapper %}
+            <div class="container">
+                <div style="padding-top: 70px">
+                    <ul class="nav nav-pills pull-right">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="#">Mon Compte</a></li>
+                        <li><a href="/logout">Déconnexion</a></li>
+                    </ul>
+                    {% include "MyFuckinJobSiteBundle:Slot:flashdatas.html.twig" %}
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script async type="text/javascript" src="http://labs.bigroomstudios.com/source/js/apprise-v2.js"></script>
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!--[if lt IE 9]>
+        <script src="{{ asset('bundles/site/js/lib/html5shiv.js') }}"></script>
+        <![endif]-->
+
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+        {#Flat Loaded#}
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://labs.bigroomstudios.com/source/js/apprise-v2.js"></script>
+
+        {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/main.coffee' filter='closure' %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+        {% endjavascripts %}
+
+
+    {% endblock %}
+
+{% endblock %}

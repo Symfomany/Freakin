@@ -1,0 +1,22 @@
+{% extends 'SiteBundle:Mails:layout.html.twig' %}
+
+{% set femme = app.user.gender == 0 %}
+
+{% block header %}
+	Validez votre inscription sur Meetserious
+{% endblock %}
+
+{% block content %}
+	Vous venez de vous inscrire sur Meetserious, on ne vous apprend rien. Une derni&egrave;re petite chose &agrave; vous demander et apr&egrave;s on vous laisse tranquille, c'est de valider votre inscription en cliquant sur le lien suivant :
+	<br/>
+	<br/>
+	<a style="background:url({{ asset('bundles/membre/email/img/lien.png') }}) bottom no-repeat; border-top: 1px solid #dedede; color: #242424; display:block; padding: 25px 10px 40px; font-weight: 700; font-size: 15px; text-align: center; text-decoration: none" href="http://www.meetserious.com/lienactivation1234">Activez votre isncription !</a>
+	<br/>
+	Oui, on sait c'est toujours pareil, mais c'est pour &eacute;viter les robots, les aliens, les termites. Enfin bref, merci pour tout !
+	<br/>
+	<br/>
+	Et d'ailleurs, si vous n'&ecirc;tes pas &agrave; l'origine de cette inscription, il vous suffit d'ignorer notre existence.
+	<br/>
+	<br/>
+	A tout de suite,
+{% endblock %}

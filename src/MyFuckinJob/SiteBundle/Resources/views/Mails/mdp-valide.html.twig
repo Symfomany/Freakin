@@ -1,0 +1,18 @@
+{% extends '::email.html.twig' %}
+
+{% block body %}
+	{% include 'SiteBundle:Mails:header.html.twig'  with { 'sujet' :  sujet , 'datas' : datas} %}
+	Comme vous me l'avez demandé, voici votre nouveau mot de passe :
+	<br/>
+	<br/>
+	<div style="background:url({{ base_img }}lien.png) bottom no-repeat; border-top: 1px solid #dedede; color: #242424; padding: 25px 10px 40px; font-weight: 700; font-size: 15px; text-align: center; text-decoration: none">{{ datas.password }}</div>
+	<br/>
+	Il n'est pas simple, je vous l'accorde, mais vous pourrez le modifier dans très peu de temps.
+	<br/>
+	<br/>
+	T&acirc;chez de pas l'oublier celui-l&agrave; !
+	<br/>
+	<br/>
+	Bisous,
+	{% include 'SiteBundle:Mails:footer.html.twig'  with { 'base_img' :  base_img , 'datas' : datas} %}
+{% endblock %}

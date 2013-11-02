@@ -1,0 +1,27 @@
+confirmation_recruteur:
+    path: /confirmation-recruteur/{email}/{token}
+    defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:validation }
+
+inscription_recruteur:
+  pattern: /inscription-recruteur
+  defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:inscription }
+
+inscription_step2:
+    pattern: /inscription-recruteur-etape2
+    defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:inscriptionstep2 }
+
+upload_recruteur:
+    pattern: /upload-recruteur
+    defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:uploadRecruteur }
+
+crop_img_recruteur:
+  pattern: /crop-img-recruteur
+  defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:cropImgRecruteur }
+
+test_mongoose:
+  pattern: /test-mongoose
+  defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:testMongoose }
+
+test_mongoose:
+  pattern: /test-mongoose-deux
+  defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:testMongooseDeux }

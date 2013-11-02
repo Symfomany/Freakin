@@ -1,0 +1,44 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/site/css/jquery.Jcrop.min.css') }}"/>
+    <script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js" ></script>
+    <script type="text/javascript">
+        var apiKey    = "43547362";
+        var sessionId = "1_MX40MzU0NzM2Mn5-VHVlIE9jdCAwOCAwMjoyMjoxMSBQRFQgMjAxM34wLjI1OTIzOTMyfg";
+        var token     = "T1==cGFydG5lcl9pZD00MzU0NzM2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1hNGQ1ZTM3ZjFlMjY0YmU3MDUzYjg4NzgwNWNhMTczMjM4YTNkNTI0OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9MV9NWDQwTXpVME56TTJNbjUtVkhWbElFOWpkQ0F3T0NBd01qb3lNam94TVNCUVJGUWdNakF4TTM0d0xqSTFPVEl6T1RNeWZnJmNyZWF0ZV90aW1lPTEzODEyMjQyNjEmbm9uY2U9MC44NjU1MTM3MjAzMzE3NzAyJmV4cGlyZV90aW1lPTEzODEzMTA2NjEmY29ubmVjdGlvbl9kYXRhPQ==";
+
+        function sessionConnectedHandler (event) {
+            session.publish( publisher );
+            subscribeToStreams(event.streams);
+        }
+        function subscribeToStreams(streams) {
+            for (var i = 0; i < streams.length; i++) {
+                var stream = streams[i];
+                if (stream.connection.connectionId
+                        != session.connection.connectionId) {
+                    session.subscribe(stream);
+                }
+            }
+        }
+        function streamCreatedHandler(event) {
+            subscribeToStreams(event.streams);
+        }
+
+        var publisher = TB.initPublisher(apiKey);
+        var session   = TB.initSession(sessionId);
+
+        session.connect(apiKey, token);
+        session.addEventListener("sessionConnected",
+                sessionConnectedHandler);
+
+        session.addEventListener("streamCreated",
+                streamCreatedHandler);
+    </script>
+{% endblock %}
+

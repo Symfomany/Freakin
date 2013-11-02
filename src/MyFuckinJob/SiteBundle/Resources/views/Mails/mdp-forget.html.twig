@@ -1,0 +1,14 @@
+{% extends '::email.html.twig' %}
+
+{% block body %}
+	{% include 'WksSiteBundle:Mails:header.html.twig'  with { 'sujet' :  sujet , 'datas' : datas} %}
+	<h3>Voici votre nouveau mot de passe:</h3>
+    <p><strong>{{ datas.mdp }}</strong></p>
+    <p>Pour confirmer votre changement de mot de passe, veuillez cliquer sur ce lien:</p>
+    <p><a href="{{ base_url }}{{ datas.link }}">Lien de confirmation</a> </p>
+
+	<br/>
+	<br/>
+	Bon sport!,
+	{% include 'WksSiteBundle:Mails:footer.html.twig'  with { 'base_img' :  base_img , 'datas' : datas} %}
+{% endblock %}

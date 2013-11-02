@@ -1,0 +1,32 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h2><span class="fui-plus"></span> Profil de {{ user.firstname|title }} {{ user.lastname|title }}</h2>
+
+    <div class="jumbotron">
+        <span data-field="description"  data-user="{{ user.id }}" class="editable">{{ user.description }}</span>
+    </div>
+{% endblock %}
+
+
+{#Css And JS Files#}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@MyFuckinJobSiteBundle/Resources/public/css/sass/inscription.sass' filter='yui_css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/jedit.js' filter='closure' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/profil.js' filter='closure' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+{#End Css And JS Files#}

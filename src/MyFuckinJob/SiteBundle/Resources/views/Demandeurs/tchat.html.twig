@@ -1,0 +1,103 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <script type="text/javascript">
+        {#// Put event listeners into place#}
+        window.addEventListener("DOMContentLoaded", function() {
+            // Grab elements, create settings, etc.
+            var canvas = document.getElementById("canvas"),
+                    context = canvas.getContext("2d"),
+                    video = document.getElementById("video"),
+                    videoObj = { "video": true },
+                    errBack = function(error) {
+                        console.log("Video capture error: ", error.code);
+                    };
+
+            // Trigger photo take
+            document.getElementById("snap").addEventListener("click", function() {
+                context.drawImage(video, 0, 0, 640, 480);
+            });
+
+            // Put video listeners into place
+            if(navigator.getUserMedia) { // Standard
+                navigator.getUserMedia(videoObj, function(stream) {
+                    video.src = stream;
+                    video.play();
+                }, errBack);
+            } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+                navigator.webkitGetUserMedia(videoObj, function(stream){
+                    video.src = window.webkitURL.createObjectURL(stream);
+                    video.play();
+                }, errBack);
+            }
+        }, false);
+    </script>
+    <!--
+	Ideally these elements aren't created until it's confirmed that the
+	client supports video/camera, but for the sake of illustrating the
+	elements involved, they are created with markup (not JavaScript)
+-->
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Snap Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <img src="/images/icons/svg/chat.svg" alt="Chat">
+    <h2>Node, IO, MongoDB</h2>
+    <h3>Tchat Multi Rooms</h3>
+        <div id="messages" style="height: 300px;overflow: auto;">
+
+            <ul></ul>
+        </div>
+        <div id="write">
+            <form action="#" method="post" id="messagerie">
+                <div class="form-group">
+                    <label for="inputEmail1" class="col-lg-2 control-label">Votre message</label>
+                    <div class="col-lg-10">
+                        <textarea rows="5" cols="80" style="margin: 30px;border-radius: 4px;" required="required" placeholder="Votre message" name="message" id="messagetxt"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-block btn-inverse btn-lg" type="submit"><i class="fui-check"></i> Ecris ce message</button>
+            </form>
+        </div>
+
+    <div class="clear"></div>
+    <h3>Petite annonces avec Mongo, Node et MogoSkin</h3>
+    <div id="annonces">
+        {% for notification in notifications %}
+            <div id="{{ notification.id }}" class="alert alert-warning fade in">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                <h3>{{ notification.titre }}</h3>
+                <p>{{ notification.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="write">
+        <fieldset>
+            <legend>Poste ton annoce ici</legend>
+        <form action="#" method="post" id="formannonce">
+            <div class="form-group">
+                <label for="inputEmail1" class="col-lg-2 control-label">Votre titre</label>
+                <div class="col-lg-10">
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Votre titre">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAnnonce" class="col-lg-2 control-label">Votre annonce</label>
+                <div class="col-lg-10">
+                    <textarea name="content" id="content" class="form-control" placeholder="Son contenu" rows="3"></textarea>
+                </div>
+            </div>
+            <br /><br /><p></p>
+            <button class="btn btn-default btn-inverse" type="submit"><i class="fui-check"></i> Ecris ce message</button>
+        </form>
+        </fieldset>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/io.js' filter='closure' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+{#End Css And JS Files#}

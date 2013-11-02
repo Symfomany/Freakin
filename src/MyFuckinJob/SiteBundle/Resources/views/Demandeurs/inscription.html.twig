@@ -1,0 +1,126 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <h2><span class="fui-plus"></span> Inscription étape 1</h2>
+
+    <ol class="breadcrumb">
+        <li><a href="#">Inscription étape 1</a></li>
+        <li><a href="#">Inscription étape 2</a></li>
+        <li><a href="#">Inscription étape 3</a></li>
+    </ol>
+
+    <div class="offset1">
+        <form action="{{ path('inscription') }}"  method="post" id="inscription">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.firstname,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-new"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.lastname,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-new"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                       {{ form_widget(form.email,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.password,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-lock"></span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="bosser">Je veux bosser</button>
+        </form>
+            <a href=""><img src="http://www.ottawacafes.com/images/facebook-connect-button.png?1380893987" /></a>
+            <a href=""><img src="http://blog.logic-immo.com/wp-content/plugins/simple-twitter-connect/images/Sign-in-with-Twitter-darker.png" /></a>
+            <a href=""><img src="http://www.justinclick.com/assets/images/google_connect_button.png" /></a>
+            <a href=""><img src="http://tomorrowistoolate.co/wp-content/uploads/2013/05/linkedin_connect_with_us.jpg" /></a>
+            <div class="clear"></div>
+            {#{{ form_rest(form) }}#}
+    </div>
+
+    {#<h3 class="demo-panel-title">Icon <small>(30)</small></h3>#}
+    {#<div class="demo-illustrations">#}
+        {#<div class="demo-content">#}
+            {#<div><img src="/images/icons/svg/toilet-paper.svg" alt="Toilet-Paper"></div>#}
+            {#<div><img src="/images/icons/svg/gift-box.svg" alt="Gift-Box"></div>#}
+            {#<div><img src="/images/icons/svg/pencils.svg" alt="Pensils"></div>#}
+            {#<div><img src="/images/icons/svg/clipboard.svg" alt="Clipboard"></div>#}
+            {#<div><img src="/images/icons/svg/retina.svg" alt="Retina"></div>#}
+            {#<div><img src="/images/icons/svg/compas.svg" alt="Compas"></div>#}
+            {#<div><img src="/images/icons/svg/map.svg" alt="Map"></div>#}
+            {#<div><img src="/images/icons/svg/chat.svg" alt="Chat"></div>#}
+            {#<div><img src="/images/icons/svg/mail.svg" alt="Mail"></div>#}
+            {#<div><img src="/images/icons/svg/book.svg" alt="Book"></div>#}
+            {#<div><img src="/images/icons/svg/calendar.svg" alt="Calendar"></div>#}
+            {#<div><img src="/images/icons/svg/paper-bag.svg" alt="Pocket"></div>#}
+            {#<div><img src="/images/icons/svg/clocks.svg" alt="Watches"></div>#}
+            {#<div><img src="/images/icons/svg/loop.svg" alt="Infinity-Loop"></div>#}
+        {#</div>#}
+    {#</div>#}
+    {#<h3 class="demo-panel-title">Glyphs <small>(30)</small></h3>#}
+
+    {#<div class="demo-icons">#}
+        {#<div class="demo-content">#}
+            {#<span class="fui-arrow-right"></span>#}
+            {#<span class="fui-arrow-left"></span>#}
+            {#<span class="fui-cmd"></span>#}
+            {#<span class="fui-check-inverted"></span>#}
+            {#<span class="fui-heart"></span>#}
+            {#<span class="fui-plus"></span>#}
+            {#<span class="fui-check"></span>#}
+            {#<span class="fui-cross"></span>#}
+            {#<span class="fui-list"></span>#}
+            {#<span class="fui-new"></span>#}
+            {#<span class="fui-video"></span>#}
+            {#<span class="fui-photo"></span>#}
+            {#<span class="fui-volume"></span>#}
+            {#<span class="fui-time"></span>#}
+            {#<span class="fui-eye"></span>#}
+            {#<span class="fui-chat"></span>#}
+            {#<span class="fui-search"></span>#}
+            {#<span class="fui-user"></span>#}
+            {#<span class="fui-lock"></span>#}
+            {#<span class="fui-gear"></span>#}
+            {#<span class="fui-radio-unchecked"></span>#}
+            {#<span class="fui-radio-checked"></span>#}
+            {#<span class="fui-checkbox-unchecked"></span>#}
+            {#<span class="fui-checkbox-checked"></span>#}
+            {#<span class="fui-calendar-solid"></span>#}
+            {#<span class="fui-pause"></span>#}
+            {#<span class="fui-play"></span>#}
+            {#<span class="fui-check-inverted-2"></span>#}
+        {#</div>#}
+    {#</div>#}
+
+
+{% endblock %}
+
+
+{#Css And JS Files#}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@MyFuckinJobSiteBundle/Resources/public/css/sass/inscription.sass' filter='yui_css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/inscription.coffee' filter='closure' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+{#End Css And JS Files#}

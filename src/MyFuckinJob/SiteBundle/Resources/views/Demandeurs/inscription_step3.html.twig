@@ -1,0 +1,38 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1><span class="fui-plus"></span> Profil</h1>
+    <h3>Infos:</h3>
+    <p>Age: {{ user.age }} ans</p>
+    <p>Ville: {{ user.ville }}</p>
+
+    <h3>Métier: {{ user.metier.title|title }}</h3>
+    <div class="jumbotron">
+        <div class="container">
+            <p>
+                {{ user.description }}
+            </p>
+        </div>
+    </div>
+    <h3>Mes derniers jobs</h3>
+    <ul>
+        {% for experience in user.experiences %}
+            <li>{{ experience.title }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Mes formations</h3>
+    <ul>
+        {% for formation in user.formations %}
+            <li>{{ formation.title }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Mes certificats</h3>
+    <ul>
+        {% for certificat in user.certificates %}
+            <li>{{ certificat.title }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Mes caractères</h3>
+          {{ user.characters }}
+{% endblock %}
+

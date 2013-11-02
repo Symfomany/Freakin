@@ -1,0 +1,152 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Webcam Streaming</h1>
+
+    <h3>Petite annonces avec Mongo, Node et MogoSkin</h3>
+    <div id="annonces">
+        {% for notification in notifications %}
+            <div id="{{ notification.id }}" class="alert alert-warning fade in">
+                <button class="close" type="button">×</button>
+                <h3>{{ notification.titre }}</h3>
+
+                <p>{{ notification.content }}</p>
+            </div>
+        {% else %}
+            <div class="alert alert-block alert-danger fade in">
+                <button class="close" type="button">×</button>
+                <p>Aucune petite annonces pour le moment</p>
+            </div>
+        {% endfor %}
+    </div>
+    <hr class="clear"/>
+    <div id="write">
+        <fieldset>
+            <legend>Poste ton annoce ici</legend>
+            <form action="#" method="post" id="formannonce">
+                <div class="form-group">
+                    <label for="inputEmail1" class="col-lg-2 control-label">Votre titre</label>
+
+                    <div class="col-lg-10">
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Votre titre">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAnnonce" class="col-lg-2 control-label">Votre annonce</label>
+
+                    <div class="col-lg-10">
+                        <textarea name="content" id="content" class="form-control" placeholder="Son contenu"
+                                  rows="3"></textarea>
+                    </div>
+                </div>
+                <br/><br/>
+
+                <p></p>
+                <button class="btn btn-default btn-inverse" type="submit"><i class="fui-check"></i> Ecris ce message
+                </button>
+            </form>
+        </fieldset>
+    </div>
+    <hr/>
+
+    <h1><img style="width: 42px;margin-right: 10px;vertical-align: middle;" src="/images/icons/svg/clipboard.svg"
+             alt="Clipboard">Application en temps réel de Question-Réponse</h1>
+
+    <div class="jumbotron question">
+        <div class="container">
+            <h1>Question</h1>
+            <br/>
+
+            <form id="formquestion" action="" method="post">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" id="question" name="question" class="form-control"
+                               placeholder="Votre question ..." required="required" maxlength="32" pattern=".{2,}">
+                        <span class="input-icon fui-check"></span>
+                    </div>
+                </div>
+
+                <p>
+                </p>
+
+                <p>
+                    <button type="submit" class="pull-right btn btn-primary btn-lg">Ecrire cette question</button>
+                </p>
+            </form>
+            <hr class="clear"/>
+            <div class="clear"></div>
+            <div id="questions">
+                {% for test in tests %}
+                    <div id="{{ test.id }}" class="alert alert-info fade in">
+                        <button class="close" type="button">×</button>
+                        <span class="pull-right"><a class="answer"><span class="fui-chat"></span> Répondre à cette
+                            question </a></span>
+
+                        <h3><span class="label label-primary">{{ loop.index }}</span><span
+                                class="txt">{{ test.question }}</span></h3>
+
+                        <form class="answering" method="post">
+                            <textarea name="answerarea"
+                                      class="answerarea {% if test.reponse is empty %}hiden{% endif %} form-control"
+                                      placeholder="Votre réponse ..." rows="10" cols="95">{{ test.reponse }}</textarea>
+                            <button class="btn btn-block btn-lg {% if test.reponse is  empty %}btn-danger{% else %}btn-success{% endif %} save"
+                                    type="submit">J'enregistre ma réponse
+                            </button>
+                        </form>
+                        <p class="pull-right label label-warning">Modifié le:
+                            <time class="timeago" title="{{ test.dateCreated }}">{{ test.dateCreated }}</time>
+                        </p>
+                        <div class="clear"></div>
+                    </div>
+                {% else %}
+                    <div class="alert alert-block alert-danger fade in">
+                        <button class="close" type="button">×</button>
+                        <p>Aucune question pour le moment</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <div id="UploadBox">
+                <h2>Upload Image Progressing By Node JS & IO</h2>
+                <fieldset>
+                    <legend>Test Upload Magique!</legend>
+                  <span id='UploadArea'>
+                     <label for="FileBox">Choisi moi une petite image: </label><input class="btn btn-primary"
+                                                                                      type="file" id="FileBox"><br>
+                     <div class="hide">
+                         <label for="NameBox">Name: </label><input type="text" id="NameBox"><br>
+                     </div>
+                     <button type='button' id='UploadButton' class='btn btn-danger'>Upload-moi ça!</button>
+                  </span>
+                </fieldset>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{#Css And JS Files#}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@MyFuckinJobSiteBundle/Resources/public/css/sass/interface.sass' filter='yui_css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/jedit.js' filter='closure' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/interface.js' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+{#End Css And JS Files#}

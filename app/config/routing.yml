@@ -1,0 +1,3 @@
+my_fuckin_job_site:
+    resource: "@MyFuckinJobSiteBundle/Resources/config/routing.yml"
+    prefix:   /

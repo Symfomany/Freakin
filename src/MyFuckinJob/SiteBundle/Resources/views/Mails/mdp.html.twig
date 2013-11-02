@@ -1,0 +1,13 @@
+{% extends '::email.html.twig' %}
+
+{% block body %}
+    {% include 'WksSiteBundle:Mails:header.html.twig'  with { 'sujet' :  sujet , 'datas' : datas} %}
+
+    <h3>Récupérer votre mot de passe</h3>
+
+    <p>Vous venez de faire une demande de récupération de mot de  passe pour accéder à votre compte WeekinSport.fr. </p>
+    <p>Pour cela rien de plus simple,  suivez le lien suivant:</p>
+    <p><a href="{{ url('site_regenerate', {'email' : user.email, 'salt' : user.salt, 'token' : user.token}) }}">Cliquer ici pour regénérer le mot de passe</a></p>
+    <p>Nous espérons que cette information vous aura été utile et vous permettra de revenir très vite parmi nous.<p>
+    {% include 'WksSiteBundle:Mails:footer.html.twig'  with { 'base_img' :  base_img , 'datas' : datas} %}
+{% endblock %}

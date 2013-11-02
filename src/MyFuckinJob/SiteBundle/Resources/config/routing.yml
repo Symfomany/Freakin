@@ -1,0 +1,109 @@
+home:
+    path: /
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:inscription }
+#
+#test:
+#    path: /test-mongoose
+#    defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:testMongoose }
+#
+#test3:
+#    path: /test-mongoose-3
+#    defaults: { _controller: MyFuckinJobSiteBundle:Recruteurs:testMongoose3 }
+
+dashboard:
+    path: /connected
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:homeConnected }
+
+myaccount:
+    path: /my-account
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:myaccount }
+
+myquestions:
+    path: /mes-questions
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:myaccount }
+
+myentretiens:
+    path: /mes-entretiens
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:myentretiens }
+
+mydisponibilites:
+    path: /mes-disponibilites
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:mydisponibilites }
+
+mypreferences:
+    path: /mes-preferences
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:mypreferences }
+
+myrecherche:
+    path: /mes-recherches
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:myrecherche }
+
+search:
+    path: /rechercher-des-recruteurs
+    defaults: { _controller: MyFuckinJobSiteBundle:Main:search }
+
+inscription:
+    pattern: /inscription
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:inscription }
+
+inscription_etape2:
+    pattern: /inscription-etape2
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:inscriptionstep2 }
+
+inscription_step3:
+    pattern: /inscription-etape3
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:inscriptionstep3 }
+
+profil:
+    pattern: /profil/{id}-{firstname}-{lastname}
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:profil }
+
+tchat:
+    pattern: /tchat
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:tchat }
+
+interface:
+    pattern: /interface
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:interface }
+
+upload_visiteur:
+    pattern: /upload-visiteur
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:uploadVisiteur }
+
+redimentionner_visiteur:
+    pattern: /redimentionner-visiteur
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:resizeProfil }
+
+confirmation:
+    path: /confirmation/{email}/{token}
+    defaults: { _controller: MyFuckinJobSiteBundle:Demandeurs:validation }
+
+getcities:
+    path: /getcities/
+    defaults: { _controller: MyFuckinJobSiteBundle:Main:villes }
+
+getsimplecities:
+    path: /getsimplecities/
+    defaults: { _controller: MyFuckinJobSiteBundle:Main:villes }
+
+getsimpleskill:
+    path: /getsimpleskills/
+    defaults: { _controller: MyFuckinJobSiteBundle:Main:simpleskills }
+
+# Recruteur
+routing_recruteur:
+    resource: "@MyFuckinJobSiteBundle/Resources/config/routing/recruteur.yml"
+
+#login
+login:
+  path: /login
+  defaults:
+    _controller: MyFuckinJobSiteBundle:Demandeurs:login
+    maxAge: 86400
+    sharedMaxAge: 86400
+
+login_check:
+  path:  /login_check
+
+logout:
+  path: /logout

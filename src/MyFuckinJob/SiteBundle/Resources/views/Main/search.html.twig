@@ -1,0 +1,73 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h2><span class="fui-plus"></span> Recherche de demandeurs</h2>
+    <div class="offset1">
+        <form action="{{ path('search') }}"  method="post"  novalidate="novalidate">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ form_widget(form.lieu,{'id' : 'place_field','attr' : { 'class': 'form-control', 'value' : app.session.get('place'), 'data-url' : path('getsimplecities') }}) }}
+                        <span class="input-icon fui-location"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ form_widget(form.activity,{'id' : 'skill_field','attr' : { 'class': 'form-control','value' : app.session.get('activity'), 'data-url' : path('getsimpleskill')}}) }}
+                        <span class="input-icon fui-list"></span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-block btn-lg btn-primary">Rechercher des recruteurs</button>
+        </form>
+    </div>
+    <hr />
+    <div id="results">
+                {% for demandeur in pagination %}
+                    <div class="media">
+                        <a class="pull-left" href="{{ path('profil', {'id': demandeur.id,'firstname': demandeur.firstname,'lastname': demandeur.lastname }) }}">
+                            <img class="media-object img-thumbnail" data-src="holder.js/64x64" alt="64x64" src="http://placekitten.com/64/64" style="width: 64px; height: 64px;">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="{{ path('profil', {'id': demandeur.id,'firstname': demandeur.firstname,'lastname': demandeur.lastname }) }}">{{ demandeur.firstname|title }} {{ demandeur.lastname|title }} <strong> de {{ demandeur.ville|title }}</strong></a></h4>
+                            <p class="description">
+                                {% for skill in demandeur.skill %}
+                                    <span class="label label-primary">{{ skill.skill.title|title }}</span>
+                                {% endfor %}
+                                <p>{{ demandeur.titre }}</p>
+                                {{ demandeur.description }}
+                            </p>
+                        </div>
+                    </div>
+                {% else %}
+            <div class="alert alert-block alert-warning fade in">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <p>Aucun résultat pour le moment</p>
+            </div>
+            {% endfor %}
+                {% if pagination is not empty %}
+                    <div class="navigation">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+                {% endif %}
+
+    </div>
+{% endblock %}
+
+
+{#Css And JS Files#}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@MyFuckinJobSiteBundle/Resources/public/css/sass/search.sass' filter='yui_css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/search.coffee' filter='closure' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+{#End Css And JS Files#}

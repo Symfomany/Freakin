@@ -1,0 +1,8 @@
+
+class_name: TestGuy
+modules:
+    enabled: [Filesystem, TestHelper, Symfony2, Doctrine2]
+    config:
+      Symfony2:
+         app_path: 'app/'
+         environment: 'dev'

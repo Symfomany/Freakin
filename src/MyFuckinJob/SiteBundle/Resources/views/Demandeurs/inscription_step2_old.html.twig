@@ -1,0 +1,135 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h2><span class="fui-plus"></span> Inscription Etape 2</h2>
+    <div class="offset1">
+        <form action="{{ path('inscription_step2') }}"  method="post" id="inscription" novalidate="novalidate">
+            <div class="span6 pull-right">
+                <label class="checkbox" for="checkbox2">
+                    <span class="icons"><span class="first-icon fui-checkbox-unchecked"></span><span class="second-icon fui-checkbox-checked"></span></span>
+                    {{ form_widget(form.same, {'id' : 'twoplages',  'data-toggle': 'checkbox' }) }}
+                    Je désire entrer deux plages horaires pour une journée
+                </label>
+            </div>
+
+            <table id="simpleview" class="table table-condensed table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Jour / Période</th>
+                    <th>Matin</th>
+                    <th>Midi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Lundi</td>
+                    <td>
+                        {{ form_widget(form.lun_begin_am, {'attr' : {'class' : 'select'} }) }}
+                        {{ form_widget(form.lun_end_am, {'attr' : {'class' : 'hide select'} }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.lun_begin_pm, {'attr' : {'class' : 'hide select'} }) }}
+                        {{ form_widget(form.lun_end_pm, {'attr' : {'class' : 'select'} }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mardi</td>
+                    <td>
+                        {{ form_widget(form.mar_begin_am, {'attr' : {'class' : 'select'} }) }}
+                        {{ form_widget(form.mar_end_am, {'attr' : {'class' : 'hide select'} }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.mar_begin_pm, {'attr' : {'class' : 'hide select'} }) }}
+                        {{ form_widget(form.mar_end_pm, {'attr' : {'class' : 'select'} }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mercredi</td>
+                    <td>
+                        {{ form_widget(form.mer_begin_am, {'attr' : {'class' : 'select'} }) }}
+                        {{ form_widget(form.mer_end_am, {'attr' : {'class' : 'hide select'} }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.mer_begin_pm, {'attr' : {'class' : 'hide select'} }) }}
+                        {{ form_widget(form.mer_end_pm, {'attr' : {'class' : 'select'} }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jeudi</td>
+                    <td>
+                        {{ form_widget(form.jeu_begin_am, {'attr' : {'class' : 'select'} }) }}
+                        {{ form_widget(form.jeu_end_am, {'attr' : {'class' : 'hide select'} }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.jeu_begin_pm, {'attr' : {'class' : 'hide select'} }) }}
+                        {{ form_widget(form.jeu_end_pm, {'attr' : {'class' : 'select'} }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vendredi</td>
+                    <td>
+                        {{ form_widget(form.ven_begin_am, {'attr' : {'class' : 'select'} }) }}
+                        {{ form_widget(form.ven_end_am, {'attr' : {'class' : 'hide select'} }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.ven_begin_pm, {'attr' : {'class' : 'hide select'} }) }}
+                        {{ form_widget(form.ven_end_pm, {'attr' : {'class' : 'select'} }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Samedi</td>
+                    <td>
+                        {{ form_widget(form.sam_begin_am, {'attr' : {'class' : 'select'} }) }}
+                        {{ form_widget(form.sam_end_am, {'attr' : {'class' : 'hide select'} }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.sam_begin_pm, {'attr' : {'class' : 'hide select'} }) }}
+                        {{ form_widget(form.sam_end_pm, {'attr' : {'class' : 'select'} }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dimanche</td>
+                    <td>
+                        {{ form_widget(form.dim_begin_am) }}
+                        {{ form_widget(form.dim_end_am, {'attr' : {'class' : 'hide'} }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.dim_begin_pm, {'attr' : {'class' : 'hide'} }) }}
+                        {{ form_widget(form.dim_end_pm) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Périodes spéciales</td>
+                    <td colspan="2">
+                        {{ form_widget(form.phrase, {'attr': {'placeholder' : "ex: Vacances scolaires : ouverture 7j/7 de 14h à 23h00"}}) }}
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-block btn-lg btn-primary">
+                <i class="icon-ok"></i>Éditer mes horaires
+            </button>
+            {{ form_widget(form._token) }}
+        </form>
+   </div>
+
+{% endblock %}
+
+{#Css And JS Files#}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@MyFuckinJobSiteBundle/Resources/public/css/sass/horaires.sass' filter='yui_css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/horaires.coffee' filter='closure' %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+{#End Css And JS Files#}

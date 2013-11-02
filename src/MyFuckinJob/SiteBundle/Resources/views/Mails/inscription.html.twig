@@ -1,0 +1,11 @@
+{% extends '::email.html.twig' %}
+
+{% block body %}
+    {% include 'MyFuckinJobSiteBundle:Mails:header.html.twig'  with { 'sujet' :  sujet , 'datas' : datas} %}
+    <p>Nous avons bien enregistré votre demande d'inscription à notre site WeekinSport, et sommes heureux de vous compter prochainement parmi nous. Afin de vous offrir un service de qualité nous avons simplement besoin de vérifier votre adresse email.</p>
+    <p>Pour valider votre inscription veuillez cliquer sur le lien suivant :<br>
+    <a href="{{ base_url }}{{ datas.link }}">Valider mon adresse email</a></p>
+    <p>Après cette étape vous accéderez gratuitement à toutes les fonctionnalités de notre plateforme.</p>
+
+    {% include 'MyFuckinJobSiteBundle:Mails:footer.html.twig'  with { 'base_img' :  base_img , 'datas' : datas} %}
+{% endblock %}

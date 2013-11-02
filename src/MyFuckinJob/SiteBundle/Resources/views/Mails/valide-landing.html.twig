@@ -1,0 +1,33 @@
+{% extends '::email.html.twig' %}
+
+{% block body %}
+	{% include 'SiteBundle:Mails:header.html.twig'  with { 'sujet' :  sujet , 'datas' : datas} %}
+	Je viens aux nouvelles concernant votre inscription sur Meetserious. Accrochez-vous, car je viens vous annoncer que le groupe de 100 personnes dans lequel vous vous trouviez vient d'&ecirc;tre valid&eacute; ! Vous savez ce que cela veut dire ? Cela veut dire que vous pouvez d&egrave;s &agrave; pr&eacute;sent participer aux premiers rendez-vous :)
+	<br/>
+	<br/>
+	Derni&egrave;re chose tout de m&ecirc;me : activez votre inscription ! C'est tout simple, il faut cliquer sur le lien, juste l&agrave; :
+	<br/>
+	<br/>
+	<a style="background:url({{ base_img }}lien.png) bottom no-repeat; border-top: 1px solid #dedede; color: #242424; display:block; padding: 25px 10px 40px; font-weight: 700; font-size: 15px; text-align: center; text-decoration: none" href="{{ base_url }}{{ datas.link }}">Activez votre inscription !</a><br/>Oui, on sait c'est toujours pareil, mais c'est pour &eacute;viter les robots, les aliens, les termites. Enfin bref, merci pour tout ! Et d'ailleurs, si vous n'&ecirc;tes pas &agrave; l'origine de cette inscription, il vous suffit d'ignorer notre existence.
+	<br/>
+	<br/>
+	Pour vous connecter, il vous suffit de retourner sur <a href="{{ base_url }}{{ datas.link }}" style="color:#f83144">la page d'accueil</a>. Vous verrez en haut, &agrave; gauche, un petit encart &laquo; connexion &raquo;. Cliquez dessus, tapez-y votre e-mail ainsi que votre mot de passe et c'est parti !
+	<br/>
+	<br/>
+        {% if datas.facebook %}
+            {% if datas.gender == 0 %}Maligne{% else %}Malin{% endif %} comme vous &ecirc;tes, vous avez utilis&eacute; Facebook Connect pour vous inscrire. Sachez cependant que cette fonctionnalit&eacute; &eacute;tant en cours de finalisation, vous devrez tout de m&ecirc;me saisir votre email et le mot de passe que vous avez choisi.
+            <br/>
+            <br/>
+        {% endif %}
+	Voil&agrave;, je crois que je vous ai tout dit !
+	<br/>
+	<br/>
+	A tout de suite,
+	{% include 'SiteBundle:Mails:footer.html.twig'  with { 'base_img' :  base_img , 'datas' : datas} %}
+{% endblock %}
+		
+		
+
+
+
+

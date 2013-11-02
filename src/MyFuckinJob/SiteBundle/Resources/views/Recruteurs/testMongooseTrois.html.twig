@@ -1,0 +1,22 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Les Notifications</h1>
+
+    <button class="btn btn-primary">Envoyer une notification</button>
+
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@MyFuckinJobSiteBundle/Resources/public/js/mongoose2.js'  %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}

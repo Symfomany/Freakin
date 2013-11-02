@@ -1,0 +1,33 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h2><span class="fui-plus"></span>Inscription recruteur étape 2</h2>
+
+    <h3>Votre Avatar</h3>
+
+    <img src="{{ asset('images/exaple-image.jpg') }}" id="jcrop_target">
+    <button type="button" id="cropImg" data-url="{{ url('crop_img_recruteur') }}">Click Me!</button>
+
+    <input type="hidden" size="4" id="x" name="x">
+    <input type="hidden" size="4" id="y" name="y">
+    <input type="hidden" size="4" id="w" name="w">
+    <input type="hidden" size="4" id="h" name="h">
+
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/site/css/jquery.Jcrop.min.css') }}"/>
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/site/js/jquery.Jcrop.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/site/js/dropzone.min.js') }}"></script>
+    {% javascripts
+    '@MyFuckinJobSiteBundle/Resources/public/js/coffee/inscription-recruteur-step2.coffee'  %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}

@@ -1,0 +1,33 @@
+[2013-10-26 16:27:35] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 16:27:36] InscriptionCept.php.INFO: see "Inscription étape 1" [] []
+[2013-10-26 16:27:36] InscriptionCept.php.ALERT: Failed asserting that 
+-->  <bold>/</bold><info><!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="robots" content="noindex,nofollow" />
+        <title>    Failed to start the session because headers have already been sent by &quot;/home/boyer/mfj/tests/acceptance/Ins</info>
+<debug>[Content too long to display. See complete response in '_log' directory]</debug>
+--> contains "inscription étape 1". [] []
+[2013-10-26 16:27:36] InscriptionCept.php.INFO: # FAILED # [] []
+[2013-10-26 16:27:36] InscriptionCept.php.INFO: PASSED [] []
+[2013-10-26 16:31:50] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 16:31:50] InscriptionCept.php.INFO: see "Inscription étape 1" [] []
+[2013-10-26 16:31:50] InscriptionCept.php.ALERT: Failed asserting that 
+-->  <bold>/</bold><info><!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="robots" content="noindex,nofollow" />
+        <title>    Failed to start the session because headers have already been sent by &quot;/home/boyer/mfj/tests/acceptance/Ins</info>
+<debug>[Content too long to display. See complete response in '_log' directory]</debug>
+--> contains "inscription étape 1". [] []
+[2013-10-26 16:31:50] InscriptionCept.php.INFO: # FAILED # [] []
+[2013-10-26 16:31:50] InscriptionCept.php.INFO: PASSED [] []
+[2013-10-26 18:21:52] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 18:22:23] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 18:22:43] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 18:24:19] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 18:25:17] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 18:25:30] InscriptionCept.php.INFO: am on page "/" [] []
+[2013-10-26 18:25:36] InscriptionCept.php.INFO: am on page "/" [] []

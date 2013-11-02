@@ -1,0 +1,149 @@
+{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
+
+{% block content %}
+    <h2><span class="fui-plus"></span> Inscription</h2>
+    <div class="offset1">
+        <form action="{{ path('first_route') }}"  method="post">
+            <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="radio">
+                            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
+                            {{ form_widget(form.gender[0],{'attr' : { 'data-toggle': 'radio' }}) }}
+                            Nana
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="radio">
+                            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
+                            {{ form_widget(form.gender[1],{'attr' : { 'data-toggle': 'radio' }}) }}
+                            Mec
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>Prénom</label>
+                {{ form_widget(form.firstname,{'attr' : { 'class': 'form-control' }}) }}
+            </div>
+            <div class="col-md-4">
+                <label>Nom</label>
+                {{ form_widget(form.lastname,{'attr' : { 'class': 'form-control' }}) }}
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Email <span class="fui-mail"></span></label>
+                   {{ form_widget(form.email,{'attr' : { 'class': 'form-control' }}) }}
+                </div>
+                    <div class="col-md-4">
+                        <label>Mot de passe</label>
+                        {{ form_widget(form.password.mdp,{'attr' : { 'class': 'form-control' }}) }}
+                    </div>
+                <div class="col-md-4">
+                    <label>Mot de passe (resaisissez le)</label>
+                    {{ form_widget(form.password.mdp_conf,{'attr' : { 'class': 'form-control' }}) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Téléphone</label>
+                    {{ form_widget(form.tel,{'attr' : { 'class': 'form-control' }}) }}
+                </div>
+                <div class="col-md-4">
+                    <label>Date de naissance</label>
+                    {{ form_widget(form.dob,{'attr' : { 'class': '' }}) }}
+                </div>
+                <div class="col-md-4">
+                    <label><span class="fui-location"></span> Ville</label>
+                    {{ form_widget(form.ville,{'attr' : { 'class': 'form-control' }}) }}
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-8">
+                    <label class="checkbox checked" for="checkbox2">
+                        <span class="icons">
+                            <span class="first-icon fui-checkbox-unchecked"></span>
+                            <span class="second-icon fui-checkbox-checked"></span>
+                        </span>
+                        {{ form_widget(form.cgu,{'attr' : { 'data-toggle': 'checkbox' }}) }}
+                        J'accepte les CGU
+                    </label>
+                    <label class="checkbox checked" for="checkbox2">
+                        <span class="icons"><span class="first-icon fui-checkbox-unchecked"></span><span class="second-icon fui-checkbox-checked"></span></span>
+                        {{ form_widget(form.optin,{'attr' : { 'data-toggle': 'checkbox' }}) }}
+                        J'accepte de recevoir les newsletters
+                    </label>
+                    <input type="submit" class="btn btn-primary offset1">
+                </div>
+            </div>
+            {#{{ form_rest(form) }}#}
+        </form>
+    </div>
+    <h3 class="demo-panel-title">Icon <small>(30)</small></h3>
+    <div class="demo-illustrations">
+        <div class="demo-content">
+            <div><img src="/images/icons/svg/toilet-paper.svg" alt="Toilet-Paper"></div>
+            <div><img src="/images/icons/svg/gift-box.svg" alt="Gift-Box"></div>
+            <div><img src="/images/icons/svg/pencils.svg" alt="Pensils"></div>
+            <div><img src="/images/icons/svg/clipboard.svg" alt="Clipboard"></div>
+            <div><img src="/images/icons/svg/retina.svg" alt="Retina"></div>
+            <div><img src="/images/icons/svg/compas.svg" alt="Compas"></div>
+            <div><img src="/images/icons/svg/map.svg" alt="Map"></div>
+            <div><img src="/images/icons/svg/chat.svg" alt="Chat"></div>
+            <div><img src="/images/icons/svg/mail.svg" alt="Mail"></div>
+            <div><img src="/images/icons/svg/book.svg" alt="Book"></div>
+            <div><img src="/images/icons/svg/calendar.svg" alt="Calendar"></div>
+            <div><img src="/images/icons/svg/paper-bag.svg" alt="Pocket"></div>
+            <div><img src="/images/icons/svg/clocks.svg" alt="Watches"></div>
+            <div><img src="/images/icons/svg/loop.svg" alt="Infinity-Loop"></div>
+        </div>
+    </div>
+    <h3 class="demo-panel-title">Glyphs <small>(30)</small></h3>
+
+    <div class="demo-icons">
+        <div class="demo-content">
+            <span class="fui-arrow-right"></span>
+            <span class="fui-arrow-left"></span>
+            <span class="fui-cmd"></span>
+            <span class="fui-check-inverted"></span>
+            <span class="fui-heart"></span>
+            <span class="fui-plus"></span>
+            <span class="fui-check"></span>
+            <span class="fui-cross"></span>
+            <span class="fui-list"></span>
+            <span class="fui-new"></span>
+            <span class="fui-video"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-volume"></span>
+            <span class="fui-time"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-search"></span>
+            <span class="fui-user"></span>
+            <span class="fui-lock"></span>
+            <span class="fui-gear"></span>
+            <span class="fui-radio-unchecked"></span>
+            <span class="fui-radio-checked"></span>
+            <span class="fui-checkbox-unchecked"></span>
+            <span class="fui-checkbox-checked"></span>
+            <span class="fui-calendar-solid"></span>
+            <span class="fui-pause"></span>
+            <span class="fui-play"></span>
+            <span class="fui-check-inverted-2"></span>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/test.coffee' filter='closure' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+{#End Css And JS Files#}
