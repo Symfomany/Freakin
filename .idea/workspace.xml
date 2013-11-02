@@ -107,10 +107,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="9" selection-start="30" selection-end="30" vertical-scroll-proportion="0.06030151">
+            <state line="27" column="55" selection-start="885" selection-end="885" vertical-scroll-proportion="0.81407034">
               <folding />
             </state>
           </provider>
@@ -126,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Extension/Twig/MyTwigExtension.php" />
         <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription_step3.html.twig" />
         <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription.html.twig" />
         <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type/DemandeurType.php" />
@@ -139,16 +138,17 @@
         <option value="$PROJECT_DIR$/tests/acceptance/WelcomeCept.php" />
         <option value="$PROJECT_DIR$/tests/acceptance/InscriptionCept.php" />
         <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Controller/DemandeursController.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="282" />
-    <option name="y" value="81" />
+    <option name="x" value="272" />
+    <option name="y" value="136" />
     <option name="width" value="1197" />
     <option name="height" value="746" />
   </component>
@@ -282,7 +282,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="282" y="81" width="1197" height="746" extended-state="0" />
+    <frame x="272" y="136" width="1197" height="746" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -405,11 +405,6 @@
         <state line="1" column="0" selection-start="5" selection-end="419" vertical-scroll-proportion="0.03345725" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="33" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.37696335" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Controller/DemandeursController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="182" column="23" selection-start="5664" selection-end="5664" vertical-scroll-proportion="0.0">
@@ -452,16 +447,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="249" selection-end="249" vertical-scroll-proportion="0.30150753">
+        <state line="2" column="9" selection-start="30" selection-end="30" vertical-scroll-proportion="0.06030151">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="30" selection-end="30" vertical-scroll-proportion="0.06030151">
+        <state line="56" column="14" selection-start="2501" selection-end="2501" vertical-scroll-proportion="0.46596858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="55" selection-start="885" selection-end="885" vertical-scroll-proportion="0.81407034">
           <folding />
         </state>
       </provider>
