@@ -73,7 +73,8 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      *      min = "2",
      *      max = "32",
      *      minMessage = "Votre prénom doit faire au minimum {{ limit }} caractères",
-     *      maxMessage = "Votre prénom doit faire au maximum {{ limit }} caractères"
+     *      maxMessage = "Votre prénom doit faire au maximum {{ limit }} caractères",
+     *      groups={"suscribe1", "suscribe2"}
      *      )
      */
     protected $firstname;
@@ -87,7 +88,8 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      *      min = "2",
      *      max = "32",
      *      minMessage = "Votre nom doit faire au minimum {{ limit }} caractères",
-     *      maxMessage = "Votre nom doit faire au maximum {{ limit }} caractères"
+     *      maxMessage = "Votre nom doit faire au maximum {{ limit }} caractères",
+     *      groups={"suscribe1", "suscribe2"}
      *      )
      */
     protected $lastname;
@@ -138,8 +140,10 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      * @Assert\NotBlank(message = "Votre mot de passe n'est pas correct", groups={"default", "forget"})
      * @Assert\Length(
      *     min=6,
+     *     max = "32",
      *     minMessage="Votre mot de passe doit comporter {{ limit }} caractères.",
-     *     groups={"default"}
+     *     maxMessage="Votre mot de passe doit comporter {{ limit }} caractères.",
+     *     groups={"suscribe1"}
      * )
      * @ORM\Column(name="password", type="string", length=255)
      */
@@ -210,8 +214,7 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      * @ORM\Column(name="email", type="string", length=128,  unique=true, nullable=false)
      * @Assert\NotBlank(message = "Votre email ne peut être vide")
      * @Assert\Email(
-     *      message = "Votre email n'est pas valide",
-     *      checkMX = true
+     *      message = "Votre email n'est pas valide"
      *      )
      */
     protected $email;
@@ -406,6 +409,11 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      * @ORM\OneToMany(targetEntity="Favoris", mappedBy="demandeur", cascade={"all"}, orphanRemoval=true)
      */
     protected $favoris;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Hobbies", mappedBy="demandeur", cascade={"all"}, orphanRemoval=true)
+     */
+    protected $hobbies;
 
     /**
      * @ORM\OneToMany(targetEntity="Formation", mappedBy="demandeur", cascade={"all"}, orphanRemoval=true)
@@ -2026,5 +2034,38 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
     public function getFormations()
     {
         return $this->formations;
+    }
+
+    /**
+     * Add hobbies
+     *
+     * @param \MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies
+     * @return Demandeur
+     */
+    public function addHobbie(\MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies)
+    {
+        $this->hobbies[] = $hobbies;
+    
+        return $this;
+    }
+
+    /**
+     * Remove hobbies
+     *
+     * @param \MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies
+     */
+    public function removeHobbie(\MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies)
+    {
+        $this->hobbies->removeElement($hobbies);
+    }
+
+    /**
+     * Get hobbies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHobbies()
+    {
+        return $this->hobbies;
     }
 }

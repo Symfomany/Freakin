@@ -3,6 +3,7 @@
 namespace MyFuckinJob\SiteBundle\Controller;
 
 use MyFuckinJob\SiteBundle\Form\Type\DemandeurStep3Type;
+use MyFuckinJob\SiteBundle\Form\Type\MetierType;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use MyFuckinJob\SiteBundle\Entity\Demandeur;
 use MyFuckinJob\SiteBundle\Document\Notifications;
@@ -160,10 +161,9 @@ class DemandeursController extends ContainerAware
      */
     public function inscriptionAction()
     {
-
         $em = $this->container->get('doctrine.orm.entity_manager');
         $request = $this->container->get('request');
-        $session = $this->container->get('session');
+        $session = $request->getSession();
 
         $user = $this->container->get('security.context')->getToken()->getUser();
         if ($user != "anon.") {
@@ -178,16 +178,16 @@ class DemandeursController extends ContainerAware
         $form->handleRequest($request);
 
         // Traitement en Post
-        if ($request->isXmlHttpRequest()) {
+//        if ($request->isXmlHttpRequest()) {
             if ('POST' == $request->getMethod()) {
                 $errors = $this->container->get('validator')->validate($form);
 
                 if (count($errors) != 0)
-                    foreach ($errors as $error)
-                         return new Response($error->getMessage(), 200, array('Content-Type' => 'application/json'));
-
-                //Receive datas
-//                $gender = $form['gender']->getData();
+                    foreach ($errors as $error){
+                        $session->getFlashBag()->add('error', $error->getMessage());
+                        return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription.html.twig', array('form' => $form->createView()));
+                    }
+//                         return new Response($error->getMessage(), 200, array('Content-Type' => 'application/json'));
                 $firstname = $form['firstname']->getData();
                 $lastname = $form['lastname']->getData();
                 $mdp = $form['password']->getData();
@@ -224,7 +224,6 @@ class DemandeursController extends ContainerAware
                 $em->persist($user);
                 $em->flush();
 
-                $session = $this->container->get('session');
                 $session->set('uid', $user->getId());
 //                $session->set('ville', $ville);
 
@@ -238,11 +237,12 @@ class DemandeursController extends ContainerAware
 //                    'lastname' => $user->getLastname(),
 //                );
 //                $this->email->send('contact@myfuckinjob.com', 'MyFuckinJobSiteBundle:Mails:inscription.html.twig', "Demande de confirmation d’inscription", $user->getEmail(), null, $datas, null, 'http://bateau.weekinsport.fr');
+                $session->getFlashBag()->add('success', 'Votre profil est à complété');
+                return new RedirectResponse($this->container->get('router')->generate('inscription_etape2'));
 
-                return new Response('true', 200, array('Content-Type' => "application/json"));
             }
-            return new Response('false', 200, array('Content-Type' => "application/json"));
-        }
+//            return new Response('false', 200, array('Content-Type' => "application/json"));
+//        }
 
         return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription.html.twig', array('form' => $form->createView()));
     }
@@ -256,13 +256,13 @@ class DemandeursController extends ContainerAware
         $em = $this->container->get('doctrine.orm.entity_manager');
         $request = $this->container->get('request');
         $this->session = $request->getSession();
-        $uid =  21;
+        $uid =  $this->session->get('uid', null);
 
-//        if (!$uid) {
-//            $this->session->getFlashBag()->add('error', 'Merci de créer un profil avant');
-//            return new RedirectResponse($this->container->get('router')->generate('inscription'));
-//        }
-//
+        if (!$uid) {
+            $this->session->getFlashBag()->add('error', 'Merci de créer un profil avant');
+            return new RedirectResponse($this->container->get('router')->generate('inscription'));
+        }
+
         $user = $em->getRepository('MyFuckinJobSiteBundle:Demandeur')->find($uid);
         if (!$user) {
             $this->session->getFlashBag()->add('error', 'Merci de créer un profil avant');
@@ -274,18 +274,86 @@ class DemandeursController extends ContainerAware
         $form->handleRequest($request);
 
         if ('POST' === $request->getMethod()) {
-            $errors = $this->container->get('validator')->validate($form);
+            $errors = $this->container->get('validator')->validate($form, array('suscribestep2'));
+            if (count($errors) != 0)
+                foreach ($errors as $error){
+                    $this->session->getFlashBag()->add('error', $error->getMessage());
+                    return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step2.html.twig', array('form' => $form->createView()));
+
+                }
+            $ville = $form['ville']->getData();
+
+            $villesproxymite = $em->getRepository('MyFuckinJobSiteBundle:Villes')->findIdByVilleAndZipcode($ville);
+            if (!empty($villesproxymite)) {
+                $villesproxymite = $villesproxymite[0];
+                $this->session->set('place', $villesproxymite->getNomVille());
+                $user->setVille($villesproxymite->getNomVille());
+                $user->setZipcode($villesproxymite->getCodePostal());
+                $user->setLongitude($villesproxymite->getLongitude());
+                $user->setLatitude($villesproxymite->getLatitude());
+            }else{
+                $this->session->getFlashBag()->add('error', 'Votre ville est introuvable');
+                return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step2.html.twig', array('form' => $form->createView()));
+            }
+
             $em->persist($user);
             $em->flush();
 
-            return new Response('true', 200, array('Content-Type' => 'application/json'));
+            $this->session->getFlashBag()->add('success', 'Votre profil a bien été mis a jour');
+            return new RedirectResponse($this->container->get('router')->generate('inscription_step3'));
         }
         return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step2.html.twig', array('form' => $form->createView()));
     }
 
 
     /**
-     * Inscription Etape 2
+     * Inscription Etape 3
+     */
+    public function inscriptionstep3Action()
+    {
+        $em = $this->container->get('doctrine.orm.entity_manager');
+        $request = $this->container->get('request');
+        $this->session = $request->getSession();
+        $form = $this->container->get('form.factory')->createBuilder(new DemandeurStep3Type())->getForm();
+        $uid = $this->session->get('uid', 21);
+
+
+        if (!$uid) {
+            $this->session->getFlashBag()->add('error', 'Merci de créer un profil avant');
+            return new RedirectResponse($this->container->get('router')->generate('inscription'));
+        }
+
+        $user = $em->getRepository('MyFuckinJobSiteBundle:Demandeur')->find($uid);
+        if (!$user) {
+            $this->session->getFlashBag()->add('error', 'Merci de créer un profil avant');
+            return new RedirectResponse($this->container->get('router')->generate('inscription'));
+        }
+
+        $form2 = $this->container->get('form.factory')->createBuilder(new MetierType($user),$user)->getForm();
+
+
+        if ('POST' === $request->getMethod()) {
+            $form->bind($request);
+            $errors = $this->container->get('validator')->validate($form);
+
+            $horaires->setPhrase($phrase);
+            $em->persist($horaires);
+            $em->flush();
+
+            $this->session->getFlashBag()->add('success', 'Horaires ise à jour avec succès!');
+            return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step2.html.twig', array('form' => $form->createView()));
+        }
+
+        return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step3.html.twig', array(
+            'form' => $form->createView(),
+            'form2' => $form2->createView(),
+            'user' => $user ));
+    }
+
+
+
+    /**
+     * My Account
      */
     public function myaccountAction()
     {
@@ -361,43 +429,6 @@ class DemandeursController extends ContainerAware
         return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:mypreferences.html.twig');
     }
 
-
-    /**
-     * Inscription Etape 3
-     */
-    public function inscriptionstep3Action()
-    {
-        $em = $this->container->get('doctrine.orm.entity_manager');
-        $request = $this->container->get('request');
-        $this->session = $request->getSession();
-        $form = $this->container->get('form.factory')->createBuilder(new DemandeurStep3Type())->getForm();
-        $uid = $this->session->get('uid', 21);
-
-        if (!$uid) {
-            $this->session->getFlashBag()->add('error', 'Merci de créer un profil avant');
-            return new RedirectResponse($this->container->get('router')->generate('inscription'));
-        }
-
-        $user = $em->getRepository('MyFuckinJobSiteBundle:Demandeur')->find($uid);
-        if (!$user) {
-            $this->session->getFlashBag()->add('error', 'Merci de créer un profil avant');
-            return new RedirectResponse($this->container->get('router')->generate('inscription'));
-        }
-
-        if ('POST' === $request->getMethod()) {
-            $form->bind($request);
-            $errors = $this->container->get('validator')->validate($form);
-
-            $horaires->setPhrase($phrase);
-            $em->persist($horaires);
-            $em->flush();
-
-            $this->session->getFlashBag()->add('success', 'Horaires ise à jour avec succès!');
-            return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step2.html.twig', array('form' => $form->createView()));
-        }
-
-        return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step3.html.twig', array('form' => $form->createView(), 'user' => $user ));
-    }
 
 //
 //

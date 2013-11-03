@@ -36,7 +36,7 @@ class Hobbies {
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Demandeur",  inversedBy="experiences")
+     * @ORM\ManyToOne(targetEntity="Demandeur",  inversedBy="hobbies")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="demandeur_id", referencedColumnName="id")
      * })

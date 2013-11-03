@@ -22,18 +22,10 @@ class DemandeurType extends AbstractType {
             ->add('dob', 'date', array( 'format' => 'dd - MMMM - yyyy','widget' => 'choice', 'years' => range($minDob->format('Y'), $maxDob->format('Y'))))
             ->add('optin','checkbox', array('attr' => array(),'required' => false))
             ->add('cgu', 'checkbox', array(
-                'required' => false,
+                'required' => true,
                 'mapped' => false
-            ))
-            ->add('password', 'repeated', array(
-                    'type' => 'password',
-                    'first_name' => 'mdp',
-                    'second_name' => 'mdp_conf',
-                    'invalid_message' => "Le mot de passe n'est pas le même",
-                    'error_bubbling' => true,
-                    'first_options'  => array('label' => 'Mot de passe' ,   'attr' => array('placeholder' => 'Au moins 6 caractères', 'pattern' => '.{6,}')),
-                    'second_options' => array('label' => 'Mot de passe (resaissez-le)',   'attr' => array('placeholder' => 'Retapez votre mot de passe', 'pattern' => '.{6,}'))
             ));
+
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
@@ -48,7 +40,7 @@ class DemandeurType extends AbstractType {
     }
 
     public function getName() {
-        return 'inscription';
+        return '';
     }
 
 }

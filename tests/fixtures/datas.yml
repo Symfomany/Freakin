@@ -1,0 +1,6 @@
+datas:
+  villes:
+   - {name : "Lyon", count: 1}
+   - {name : "Marseille", count: 1}
+   - {name : "Paris", count: 1}
+   - {name : "Lion", count: 1}

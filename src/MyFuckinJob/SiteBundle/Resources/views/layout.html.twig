@@ -81,8 +81,16 @@
                 <div style="padding-top: 70px">
                     <ul class="nav nav-pills pull-right">
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="#">Mon Compte</a></li>
-                        <li><a href="/logout">Déconnexion</a></li>
+                        {% if app.user.id is defined %}
+                            <li><a href="#">Mon Compte</a></li>
+                        {% else %}
+                            <li><a href="/logout">Inscription</a></li>
+                        {% endif %}
+                        {% if app.user.id is defined %}
+                            <li><a href="/logout">Déconnexion</a></li>
+                        {% else %}
+                            <li><a href="/logout">Connexion</a></li>
+                        {% endif %}
                     </ul>
                     {% include "MyFuckinJobSiteBundle:Slot:flashdatas.html.twig" %}
                     {% block content %}

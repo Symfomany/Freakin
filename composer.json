@@ -29,10 +29,8 @@
         "imagine/Imagine":"0.6.*@dev",
         "jms/serializer-bundle": "dev-master",
         "jms/security-extra-bundle": "dev-master",
-        "doctrine/mongodb-odm-bundle": "3.0.*",
-        "codeception/codeception": "dev-master",
-        "behat/mink-zombie-driver": "dev-master",
-        "phpunit/php-invoker": "dev-master"
+        "doctrine/mongodb-odm-bundle": "dev-master",
+        "codeception/codeception": "*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -53,7 +51,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",

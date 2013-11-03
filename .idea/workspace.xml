@@ -7,21 +7,21 @@
     <file path="/home.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1381254192097" ignored="false" />
     <file path="/testMongooseTrois.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1381308394714" ignored="false" />
     <file path="/mongoose2.js" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1381308501839" ignored="false" />
-    <file path="/Demandeur.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382632301716" ignored="false" />
+    <file path="/Demandeur.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383468605120" ignored="false" />
     <file path="/test.sass" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1381320296979" ignored="false" />
     <file path="$PROJECT_DIR$/inte/slidejuju.sass" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1381320880290" ignored="false" />
     <file path="/composer.json" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382022581080" ignored="false" />
     <file path="/DemandeurType.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382462212111" ignored="false" />
     <file path="/app_dev.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382464859077" ignored="false" />
-    <file path="/inscription.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382634798999" ignored="false" />
-    <file path="/DemandeursController.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382804712625" ignored="false" />
+    <file path="/inscription.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383404729383" ignored="false" />
+    <file path="/DemandeursController.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383469101657" ignored="false" />
     <file path="/a.dummy" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382548135652" ignored="false" />
     <file path="/routing.yml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382607589252" ignored="false" />
     <file path="/parameters.yml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382522356280" ignored="false" />
     <file path="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382804547488" ignored="false" />
     <file path="/DemandeurStep3Type.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382626282776" ignored="false" />
     <file path="/inscription_step2.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382626192287" ignored="false" />
-    <file path="/inscription_step3.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382632997565" ignored="false" />
+    <file path="/inscription_step3.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383469457721" ignored="false" />
     <file path="/inscription.coffee" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382526180129" ignored="false" />
     <file path="/Certificat.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382541927041" ignored="false" />
     <file path="/Languages.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382544143535" ignored="false" />
@@ -29,7 +29,7 @@
     <file path="/Search.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382548175555" ignored="false" />
     <file path="/DemandeurNewsletter.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382548656041" ignored="false" />
     <file path="/Favoris.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382604896028" ignored="false" />
-    <file path="/layout.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382609133055" ignored="false" />
+    <file path="/layout.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383410941119" ignored="false" />
     <file path="/myaccount.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382606680270" ignored="false" />
     <file path="/myquestions.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382606876962" ignored="false" />
     <file path="/myentretiens.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382607019500" ignored="false" />
@@ -41,13 +41,21 @@
     <file path="/inscription_step2.coffee" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382624238463" ignored="false" />
     <file path="/Metier.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382626167413" ignored="false" />
     <file path="/MyTwigExtension.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382633012725" ignored="false" />
-    <file path="/functional.suite.yml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382635507531" ignored="false" />
-    <file path="/acceptance.suite.yml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382692204404" ignored="false" />
+    <file path="/functional.suite.yml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383384049720" ignored="false" />
+    <file path="/acceptance.suite.yml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383383017360" ignored="false" />
     <file path="/WelcomeCept.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382714357671" ignored="false" />
     <file path="/ExampleTest.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382691836339" ignored="false" />
-    <file path="/InscriptionCept.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1382790974901" ignored="false" />
+    <file path="/InscriptionCept.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383385011481" ignored="false" />
     <file path="/README.txt" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383381420573" ignored="false" />
     <file path="/.gitignore" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383381499117" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/toolbar.xml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383385739005" ignored="false" />
+    <file path="/InscriptionCest.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383409231595" ignored="false" />
+    <file path="/flashdatas.html.twig" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383392538811" ignored="false" />
+    <file path="/DemandeurStep2Type.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383405164257" ignored="false" />
+    <file path="/DemandeursTest.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383409058958" ignored="false" />
+    <file path="/datas.yml" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383409090562" ignored="false" />
+    <file path="/_bootstrap.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383408906152" ignored="false" />
+    <file path="/MetierType.php" changelist="747b02a0-f09f-4051-8cd0-e6d50baa6301" time="1383469042125" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,10 +115,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="inscription_step3.html.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription_step3.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="55" selection-start="885" selection-end="885" vertical-scroll-proportion="0.81407034">
+            <state line="3" column="35" selection-start="112" selection-end="112" vertical-scroll-proportion="0.097826086">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DemandeursController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Controller/DemandeursController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="331" column="97" selection-start="13251" selection-end="13251" vertical-scroll-proportion="-9.081633">
+              <folding>
+                <element signature="e#53#109#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetierType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type/MetierType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="30" selection-start="357" selection-end="357" vertical-scroll-proportion="-7.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Demandeur.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Demandeur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="446" column="0" selection-start="11027" selection-end="11027" vertical-scroll-proportion="-84.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hobbies.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Hobbies.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="68" selection-start="824" selection-end="824" vertical-scroll-proportion="-8.25">
               <folding />
             </state>
           </provider>
@@ -126,29 +172,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription_step3.html.twig" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Slot/flashdatas.html.twig" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/public/js/coffee/inscription_step2.coffee" />
         <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription.html.twig" />
-        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type/DemandeurType.php" />
-        <option value="$PROJECT_DIR$/tests/acceptance/_bootstrap.php" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type/DemandeurStep2Type.php" />
         <option value="$PROJECT_DIR$/tests/unit.suite.yml" />
-        <option value="$PROJECT_DIR$/tests/unit/ExampleTest.php" />
-        <option value="$PROJECT_DIR$/tests/functional.suite.yml" />
-        <option value="$PROJECT_DIR$/tests/acceptance.suite.yml" />
-        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/public/js/coffee/inscription.coffee" />
-        <option value="$PROJECT_DIR$/tests/acceptance/WelcomeCept.php" />
-        <option value="$PROJECT_DIR$/tests/acceptance/InscriptionCept.php" />
+        <option value="$PROJECT_DIR$/tests/_bootstrap.php" />
+        <option value="$PROJECT_DIR$/tests/unit/_bootstrap.php" />
+        <option value="$PROJECT_DIR$/tests/unit/DemandeursTest.php" />
+        <option value="$PROJECT_DIR$/tests/fixtures/datas.yml" />
+        <option value="$PROJECT_DIR$/tests/acceptance/InscriptionCest.php" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Hobbies.php" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Demandeur.php" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type/MetierType.php" />
         <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Controller/DemandeursController.php" />
-        <option value="$PROJECT_DIR$/README.txt" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription_step3.html.twig" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="272" />
-    <option name="y" value="136" />
+    <option name="x" value="266" />
+    <option name="y" value="91" />
     <option name="width" value="1197" />
     <option name="height" value="746" />
   </component>
@@ -196,6 +242,130 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyFuckinJob" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyFuckinJob" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Type" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mfj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyFuckinJob" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiteBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -207,8 +377,8 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="Configurable.PHP" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig" serverName="mfj" serverId="5eeb4549-8503-4614-bb3c-143153024626" autoUpload="true">
     <servers>
@@ -232,11 +402,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/images" />
+      <recent name="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type" />
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity" />
       <recent name="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs" />
-      <recent name="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/public/js/coffee" />
-      <recent name="$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/node" />
@@ -282,7 +452,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="272" y="136" width="1197" height="746" extended-state="0" />
+    <frame x="266" y="91" width="1197" height="746" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -291,7 +461,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22175732" sideWeight="0.6757624" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33640167" sideWeight="0.6757624" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32971016" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -370,100 +540,96 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/codeception.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/_bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.032608695" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/fixtures/datas.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="18" selection-start="134" selection-end="134" vertical-scroll-proportion="0.11904762" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/unit.suite.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="176" selection-end="176" vertical-scroll-proportion="0.21105528" />
+        <state line="11" column="10" selection-start="213" selection-end="253" vertical-scroll-proportion="0.26190478" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/acceptance.suite.yml">
+    <entry file="file://$PROJECT_DIR$/tests/unit/DemandeursTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="16" selection-start="477" selection-end="484" vertical-scroll-proportion="0.0" />
+        <state line="6" column="7" selection-start="100" selection-end="100" vertical-scroll-proportion="-4.5" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/public/js/coffee/inscription-recruteur.coffee">
+    <entry file="file://$PROJECT_DIR$/tests/acceptance/InscriptionCest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="59" column="36" selection-start="1491" selection-end="1491" vertical-scroll-proportion="-14.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Controller/MainController.php">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Extension/Twig/MyTwigExtension.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="103.5" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription_step2.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Metier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="36.666668" />
+        <state line="25" column="20" selection-start="471" selection-end="476" vertical-scroll-proportion="-7.5" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/public/js/coffee/inscription_step2.coffee">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Languages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="27" column="27" selection-start="548" selection-end="548" vertical-scroll-proportion="-20.25" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/public/js/coffee/inscription.coffee">
+    <entry file="file://$PROJECT_DIR$/tests/unit/_bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="5" selection-end="419" vertical-scroll-proportion="0.03345725" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Controller/DemandeursController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="23" selection-start="5664" selection-end="5664" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="2" column="33" selection-start="72" selection-end="101" vertical-scroll-proportion="0.06428572" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="63" selection-start="6106" selection-end="6307" vertical-scroll-proportion="0.0">
+        <state line="88" column="0" selection-start="5177" selection-end="5177" vertical-scroll-proportion="0.03214286">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Hobbies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="22" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+        <state line="38" column="68" selection-start="824" selection-end="824" vertical-scroll-proportion="-8.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/public/js/coffee/index.coffee">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Entity/Demandeur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="29" vertical-scroll-proportion="0.0">
+        <state line="446" column="0" selection-start="11027" selection-end="11027" vertical-scroll-proportion="-84.75">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/acceptance/InscriptionCept.php">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Form/Type/MetierType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="180" selection-end="359" vertical-scroll-proportion="0.03141361">
+        <state line="12" column="30" selection-start="357" selection-end="357" vertical-scroll-proportion="-7.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Tests/Controller/DefaultControllerTest.php">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Controller/DemandeursController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="331" column="97" selection-start="13251" selection-end="13251" vertical-scroll-proportion="-9.081633">
+          <folding>
+            <element signature="e#53#109#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/MyFuckinJob/SiteBundle/Resources/views/Demandeurs/inscription_step3.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="30" selection-end="30" vertical-scroll-proportion="0.06030151">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="14" selection-start="2501" selection-end="2501" vertical-scroll-proportion="0.46596858">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="55" selection-start="885" selection-end="885" vertical-scroll-proportion="0.81407034">
+        <state line="3" column="35" selection-start="112" selection-end="112" vertical-scroll-proportion="0.097826086">
           <folding />
         </state>
       </provider>

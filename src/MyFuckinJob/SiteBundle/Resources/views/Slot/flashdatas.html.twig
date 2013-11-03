@@ -1,26 +1,36 @@
-{% block flash_data_off %}
-    {% if app.session.has('notice') %}
-        <div class="alert alert-block alert-info fade in">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {{ app.session.flash('notice') }}
-        </div>
-    {% endif %}
-    {% if app.session.has('error') %}
-        <div class="alert alert-block alert-error fade in">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {{ app.session.flash('error') }}
-        </div>
-    {% endif %}
-    {% if app.session.has('success') %}
-        <div class="alert alert-block alert-success fade in">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {{ app.session.flash('success') }}
-        </div>
-    {% endif %}
-    {% if app.session.has('warning') %}
-        <div class="alert alert-block alert-warning fade in">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {{ app.session.flash('warning') }}
-        </div>
-    {% endif %}
-{% endblock %}
+<div class="clear"></div>
+    {% block flash_data_off %}
+        {% if app.session.flashbag.get('notice') is defined %}
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="alert alert-block alert-info fade in">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if app.session.flashbag.get('error') is defined %}
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                <div class="alert alert-block alert-warning fade in">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if app.session.flashbag.get('success') is defined %}
+            {% for flashMessage in app.session.flashbag.get('success') %}
+                <div class="alert alert-block alert-success fade in">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if app.session.flashbag.get('warning') is defined %}
+            {% for flashMessage in app.session.flashbag.get('warning') %}
+                <div class="alert alert-block alert-warning fade in">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
+<div class="clear"></div>

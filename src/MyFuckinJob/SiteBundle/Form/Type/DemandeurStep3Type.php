@@ -38,7 +38,7 @@ class DemandeurStep3Type extends AbstractType {
     }
 
     public function getName() {
-        return 'inscription';
+        return '';
     }
 
 }

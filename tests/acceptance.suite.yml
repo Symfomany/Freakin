@@ -10,13 +10,14 @@
 
 class_name: WebGuy
 modules:
-    enabled:
-      - PhpBrowser
-      - WebHelper
-      - Symfony2
-    config:
-        PhpBrowser:
-          url: 'http://www.mfj.ju/app_dev.php/'
-        Symfony2:
-                 app_path: 'app'
-                 environment: 'dev'
+  enabled:
+    - PhpBrowser
+    - WebHelper
+    - Symfony2
+    - WebDebug
+  config:
+      PhpBrowser:
+        url: 'http://www.mfj.ju/app_test.php/'
+      Symfony2:
+        app_path: 'app'
+        environment: 'test'

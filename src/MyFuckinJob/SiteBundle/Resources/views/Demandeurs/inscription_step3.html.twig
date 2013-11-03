@@ -1,12 +1,25 @@
 {% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
 
 {% block content %}
+    <img src="/images/cover.jpg" />
     <h1><span class="fui-plus"></span> Profil</h1>
     <h3>Infos:</h3>
+    <p>Prénom: {{ user.firstname|title}}</p>
+    <p>Nom: {{ user.lastname|title }}</p>
+    <p>Titre: <strong>{{ user.metier.title|title }}</strong></p>
     <p>Age: {{ user.age }} ans</p>
     <p>Ville: {{ user.ville }}</p>
 
+    <h4>Je peux bouger: <strong>à l'autre bout du monde</strong></h4>
+    <h4>Permis: <strong>Permis B</strong></h4>
+
     <h3>Métier: {{ user.metier.title|title }}</h3>
+    <form action="" method="post">
+        {{ form(form2) }}
+        <button class="btn btn-primary btn-small" type="submit">Modifier</button>
+    </form>
+    <hr class="clear" />
+    <h4>Poourquoi toi et pas un autre</h4>
     <div class="jumbotron">
         <div class="container">
             <p>
@@ -32,7 +45,19 @@
             <li>{{ certificat.title }}</li>
         {% endfor %}
     </ul>
+    <h3>Mes hobbies</h3>
+    <ul>
+        {% for hobbie in user.hobbies %}
+            <li>{{ hobbie.title }}</li>
+        {% endfor %}
+    </ul>
     <h3>Mes caractères</h3>
           {{ user.characters }}
+    <h3>Mes langues</h3>
+    <ul>
+        {% for language in user.languages %}
+            <li>{{ language.frenchName|title }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
 

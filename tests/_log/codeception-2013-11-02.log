@@ -1,0 +1,78 @@
+[2013-11-02 16:30:58] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Method fournisseur does not exist [] []
+[2013-11-02 16:30:58] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:30:58] Codeception.INFO: PASSED [] []
+[2013-11-02 16:31:25] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Trying to invoke protected method DemandeursTest::fournisseur() from scope ReflectionMethod [] []
+[2013-11-02 16:31:25] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:31:25] Codeception.INFO: PASSED [] []
+[2013-11-02 16:31:39] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Trying to invoke private method DemandeursTest::fournisseur() from scope ReflectionMethod [] []
+[2013-11-02 16:31:39] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:31:39] Codeception.INFO: PASSED [] []
+[2013-11-02 16:32:27] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Trying to invoke private method DemandeursTest::fournisseur() from scope ReflectionMethod [] []
+[2013-11-02 16:32:27] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:32:27] Codeception.INFO: PASSED [] []
+[2013-11-02 16:40:58] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Method fournisseur does not exist [] []
+[2013-11-02 16:40:58] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:40:58] Codeception.INFO: PASSED [] []
+[2013-11-02 16:41:52] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set #0 is invalid. [] []
+[2013-11-02 16:41:52] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:41:52] Codeception.INFO: PASSED [] []
+[2013-11-02 16:42:44] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set "ville" is invalid. [] []
+[2013-11-02 16:42:44] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:42:44] Codeception.INFO: PASSED [] []
+[2013-11-02 16:43:05] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set "data" is invalid. [] []
+[2013-11-02 16:43:05] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:43:05] Codeception.INFO: PASSED [] []
+[2013-11-02 16:43:18] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set #0 is invalid. [] []
+[2013-11-02 16:43:18] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:43:18] Codeception.INFO: PASSED [] []
+[2013-11-02 16:43:27] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set #0 is invalid. [] []
+[2013-11-02 16:43:27] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:43:27] Codeception.INFO: PASSED [] []
+[2013-11-02 16:43:33] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set #0 is invalid. [] []
+[2013-11-02 16:43:33] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:43:33] Codeception.INFO: PASSED [] []
+[2013-11-02 16:44:52] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set "data" is invalid. [] []
+[2013-11-02 16:44:52] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:44:52] Codeception.INFO: PASSED [] []
+[2013-11-02 16:46:00] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set "ville" is invalid. [] []
+[2013-11-02 16:46:00] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:46:00] Codeception.INFO: PASSED [] []
+[2013-11-02 16:46:11] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set "ville" is invalid. [] []
+[2013-11-02 16:46:11] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:46:11] Codeception.INFO: PASSED [] []
+[2013-11-02 16:46:23] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set "datas" is invalid. [] []
+[2013-11-02 16:46:23] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:46:23] Codeception.INFO: PASSED [] []
+[2013-11-02 16:46:46] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set #0 is invalid. [] []
+[2013-11-02 16:46:46] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:46:46] Codeception.INFO: PASSED [] []
+[2013-11-02 16:47:43] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set #0 is invalid. [] []
+[2013-11-02 16:47:43] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:47:43] Codeception.INFO: PASSED [] []
+[2013-11-02 16:49:06] Codeception.ALERT: The data provider specified for DemandeursTest::testfindIdByVilleAndZipcode is invalid.
+Data set #0 is invalid. [] []
+[2013-11-02 16:49:06] Codeception.INFO: # FAILED # [] []
+[2013-11-02 16:49:06] Codeception.INFO: PASSED [] []
+[2013-11-02 17:10:07] Codeception.ALERT: file_get_contents(/home/boyer/mfj/tests/unit/fixtures/datas.yml): failed to open stream: No such file or directory [] []
+[2013-11-02 17:10:07] Codeception.INFO: # ERROR # [] []
+[2013-11-02 17:10:07] Codeception.INFO: PASSED [] []
+[2013-11-02 17:10:19] Codeception.ALERT: file_get_contents(/home/boyer/mfj/tests/unit../fixtures/datas.yml): failed to open stream: No such file or directory [] []
+[2013-11-02 17:10:19] Codeception.INFO: # ERROR # [] []
+[2013-11-02 17:10:19] Codeception.INFO: PASSED [] []

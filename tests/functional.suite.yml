@@ -1,8 +1,10 @@
 
 class_name: TestGuy
 modules:
-    enabled: [Filesystem, TestHelper, Symfony2, Doctrine2]
+    enabled: [Symfony2, Doctrine2, TestHelper,PhpBrowser, WebDebug]
     config:
+      PhpBrowser:
+         url: 'http://www.mfj.ju/app_test.php/'
       Symfony2:
-         app_path: 'app/'
-         environment: 'dev'
+         app_path: 'app'
+         environment: 'test'
