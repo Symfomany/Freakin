@@ -1,0 +1,40 @@
+<div class="jumbotron col-md-3">
+    {% block rightmenu %}
+        <h3>Mon profil</h3>
+        <div class="progress progress-striped active">
+            <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                <span class="sr-only">45% Complete</span>
+            </div>
+        </div>
+        <h3>Mes entretiens</h3>
+        <ul>
+            <li>A répondre: <div class="badge badge-important">2</div> </li>
+            <li>Prévu: <div class="badge badge-important">1</div> </li>
+            <li>Terminé: <div class="badge badge-important">5</div> </li>
+        </ul>
+        <h3>Mes disponibilités</h3>
+             <div class="label label-primary">Lundi de 9h à 15h</div>
+             <div class="label label-primary">Mardi dès 15h</div>
+             <div class="label label-primary">Vendredi de 14h à 18h</div>
+        <h3>Mon niveau</h3>
+        <div class="alert alert-success">Expert!</div>
+        <h3>Mes préférences</h3>
+    {% endblock %}
+     {% block somelinks %}
+         <ul>
+             <li><a href="">Aide</a></li>
+             <li><a href="">Questions/Réponses</a></li>
+             <li><a href="">Workshops</a></li>
+             <li><a href="">A propos de FreakinJob</a></li>
+             <li><a href="">Blog</a></li>
+             <li><a href="">Presse et média</a></li>
+             <li><a href="">Conditions générales</a></li>
+             <li><a href="">Contactez-nous</a></li>
+         </ul>
+        <ul id="réseaux">
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Goofle Plus</li>
+        </ul>
+     {% endblock %}
+</div>

@@ -29,12 +29,13 @@ use MyFuckinJob\SiteBundle\Entity\Skill;
  *  MyFuckinJob\SiteBundle\Entity\Demandeur
  *
  * @ORM\Table(name="demandeur")
- * @UniqueEntity(fields={"email"}, message="Votre email est déjà utilisé")
+ * @UniqueEntity(fields={"email"}, message="Votre email est déjà utilisé", groups={"registration"})
  * @ORM\Entity(repositoryClass="MyFuckinJob\SiteBundle\Repository\DemandeurRepository")
  */
 class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Serializable {
 
     public function __construct() {
+        $this->enabled = true;
         $this->optIn = 0;
         $this->permis = 0;
         $this->mobiliter = 0;
@@ -65,6 +66,13 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
 
 
     /**
+     * @var string $gender
+     * @ORM\Column(name="gender", type="boolean")
+     */
+    protected $gender;
+
+
+    /**
      * @var string $firstname
      *
      * @ORM\Column(name="firstname", type="string", length=32)
@@ -74,7 +82,7 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      *      max = "32",
      *      minMessage = "Votre prénom doit faire au minimum {{ limit }} caractères",
      *      maxMessage = "Votre prénom doit faire au maximum {{ limit }} caractères",
-     *      groups={"suscribe1", "suscribe2"}
+     *      groups={"suscribe1", "suscribe2", "registration"}
      *      )
      */
     protected $firstname;
@@ -83,16 +91,31 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
     /**
      * @var string $lastname
      * @ORM\Column(name="lastname", type="string", length=32, nullable=false)
-     * @Assert\NotBlank(message = "Votre nom ne peut être vite")
+     * @Assert\NotBlank(message = "Votre nom ne peut être vite", groups={"registration"})
      * @Assert\Length(
      *      min = "2",
      *      max = "32",
      *      minMessage = "Votre nom doit faire au minimum {{ limit }} caractères",
      *      maxMessage = "Votre nom doit faire au maximum {{ limit }} caractères",
-     *      groups={"suscribe1", "suscribe2"}
+     *      groups={"suscribe1", "suscribe2", "registration"}
      *      )
      */
     protected $lastname;
+
+
+    /**
+     * @var string $entreprise
+     * @ORM\Column(name="entreprise", type="string", length=32, nullable=false)
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "32",
+     *      minMessage = "Votre nom doit faire au minimum {{ limit }} caractères",
+     *      maxMessage = "Votre nom doit faire au maximum {{ limit }} caractères",
+     *      groups={"suscribe1", "suscribe2", "registration"}
+     *      )
+     */
+    protected $entreprise;
+
 
     /**
      * @var text $mea
@@ -108,11 +131,24 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      *      max = 550,
      *      minMessage = "Votre description doit faire au moins 2 caractères",
      *      maxMessage = "Votre description ne peut pas être plus long que 550 caractères",
-     *      groups={"default"}
+     *      groups={"default", "registration"}
      * )
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     public $description;
+
+    /**
+     * @var text $extras
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 550,
+     *      minMessage = "Votre description doit faire au moins 2 caractères",
+     *      maxMessage = "Votre description ne peut pas être plus long que 550 caractères",
+     *      groups={"default"}
+     * )
+     * @ORM\Column(name="extras", type="text", nullable=true)
+     */
+    public $extras;
 
 
     /**
@@ -131,19 +167,19 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
     /**
      * @var string $tel
      * @ORM\Column(name="tel", type="string", nullable=true, length=15)
-     * @Assert\Regex(pattern="/^(0|\+[1-9][0-9]{0,2})[1-9]([-. ]?[0-9]{2}){4}$/", message="Le téléphone est invalide",  groups={"default"})
+     * @Assert\Regex(pattern="/^(0|\+[1-9][0-9]{0,2})[1-9]([-. ]?[0-9]{2}){4}$/", message="Le téléphone est invalide",  groups={"default", "registration"})
      */
     public $tel;
 
     /**
      * @var string $password
-     * @Assert\NotBlank(message = "Votre mot de passe n'est pas correct", groups={"default", "forget"})
+     * @Assert\NotBlank(message = "Votre mot de passe n'est pas correct", groups={"default", "forget", "registration"})
      * @Assert\Length(
      *     min=6,
      *     max = "32",
      *     minMessage="Votre mot de passe doit comporter {{ limit }} caractères.",
      *     maxMessage="Votre mot de passe doit comporter {{ limit }} caractères.",
-     *     groups={"suscribe1"}
+     *     groups={"suscribe1", "registration"}
      * )
      * @ORM\Column(name="password", type="string", length=255)
      */
@@ -156,11 +192,25 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
     protected $horaires;
 
     /**
+     * @var string $level
+     * @ORM\Column(name="level", type="integer")
+     */
+    protected $level;
+
+
+    /**
      * @var string $titre
      *
      * @ORM\Column(name="titre", type="string",  length=128,  unique=true, nullable=false)
      */
     protected $titre;
+
+    /**
+     * @var string $xpPro
+     *
+     * @ORM\Column(name="isShop", type="boolean", nullable=true)
+     */
+    protected $isShop;
 
     /**
      * @var string $xpPro
@@ -182,6 +232,14 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      * @ORM\Column(name="statut", type="text", nullable=false)
      */
     protected $statut;
+
+    
+    /**
+     * @var string $statut
+     *
+     * @ORM\Column(name="urlShop", type="string", length=128, nullable=false)
+     */
+    protected $urlShop;
 
     /**
      * @var string $permis
@@ -359,7 +417,6 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
      */
     public $latitude;
 
-
     /**
      * @var string
      *
@@ -390,47 +447,28 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
     protected $certificates;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Languages")
-     * @ORM\JoinTable(name="demandeur_i18n_language_codes")
-     */
-    protected $speaks;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Entretien", mappedBy="demandeur", cascade={"all"}, orphanRemoval=true)
-     */
-    protected $entretiens;
-
-    /**
      * @ORM\OneToOne(targetEntity="Metier", cascade={"all"}, orphanRemoval=true)
      */
     protected $metier;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Favoris", mappedBy="demandeur", cascade={"all"}, orphanRemoval=true)
-     */
-    protected $favoris;
 
     /**
-     * @ORM\OneToMany(targetEntity="Hobbies", mappedBy="demandeur", cascade={"all"}, orphanRemoval=true)
-     */
-    protected $hobbies;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Formation", mappedBy="demandeur", cascade={"all"}, orphanRemoval=true)
-     */
-    protected $formations;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Languages")
+     * @ORM\ManyToMany(targetEntity="Languages", mappedBy="demandeurs")
      * @ORM\JoinTable(name="demandeur_i18n_language_codes")
      */
-    private $languages;
+    private $langues;
 
     /**
      *
      * @ORM\OneToOne(targetEntity="DemandeurNewsletter",mappedBy="demandeur")
      */
     protected $newsletter;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Reservations",mappedBy="demandeur")
+     */
+    protected $seminaire;
 
 
 
@@ -1748,6 +1786,7 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
         return $this->experiences;
     }
 
+
     public function setExperiences(ArrayCollection $experiences)
     {
         $this->experiences = $experiences;
@@ -1825,71 +1864,7 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
         return $this->characters;
     }
 
-    /**
-     * Add speaks
-     *
-     * @param \MyFuckinJob\SiteBundle\Entity\Certificat $speaks
-     * @return Demandeur
-     */
-    public function addSpeak(\MyFuckinJob\SiteBundle\Entity\Certificat $speaks)
-    {
-        $this->speaks[] = $speaks;
-    
-        return $this;
-    }
 
-    /**
-     * Remove speaks
-     *
-     * @param \MyFuckinJob\SiteBundle\Entity\Certificat $speaks
-     */
-    public function removeSpeak(\MyFuckinJob\SiteBundle\Entity\Certificat $speaks)
-    {
-        $this->speaks->removeElement($speaks);
-    }
-
-    /**
-     * Get speaks
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSpeaks()
-    {
-        return $this->speaks;
-    }
-
-    /**
-     * Add languages
-     *
-     * @param \MyFuckinJob\SiteBundle\Entity\Languages $languages
-     * @return Demandeur
-     */
-    public function addLanguage(\MyFuckinJob\SiteBundle\Entity\Languages $languages)
-    {
-        $this->languages[] = $languages;
-    
-        return $this;
-    }
-
-    /**
-     * Remove languages
-     *
-     * @param \MyFuckinJob\SiteBundle\Entity\Languages $languages
-     */
-    public function removeLanguage(\MyFuckinJob\SiteBundle\Entity\Languages $languages)
-    {
-        $this->languages->removeElement($languages);
-    }
-
-    /**
-     * Get languages
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getLanguages()
-    {
-        return $this->languages;
-    }
 
     /**
      * Add entretiens
@@ -2003,69 +1978,209 @@ class Demandeur extends EntityRepository  implements AdvancedUserInterface, \Ser
         return $this->metier;
     }
 
+
+
     /**
-     * Add formations
+     * Set extras
      *
-     * @param \MyFuckinJob\SiteBundle\Entity\Formation $formations
+     * @param string $extras
      * @return Demandeur
      */
-    public function addFormation(\MyFuckinJob\SiteBundle\Entity\Formation $formations)
+    public function setExtras($extras)
     {
-        $this->formations[] = $formations;
+        $this->extras = $extras;
     
         return $this;
     }
 
     /**
-     * Remove formations
+     * Get extras
      *
-     * @param \MyFuckinJob\SiteBundle\Entity\Formation $formations
+     * @return string 
      */
-    public function removeFormation(\MyFuckinJob\SiteBundle\Entity\Formation $formations)
+    public function getExtras()
     {
-        $this->formations->removeElement($formations);
+        return $this->extras;
     }
 
     /**
-     * Get formations
+     * Add langues
      *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getFormations()
-    {
-        return $this->formations;
-    }
-
-    /**
-     * Add hobbies
-     *
-     * @param \MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies
+     * @param \MyFuckinJob\SiteBundle\Entity\Languages $langues
      * @return Demandeur
      */
-    public function addHobbie(\MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies)
+    public function addLangue(\MyFuckinJob\SiteBundle\Entity\Languages $langues)
     {
-        $this->hobbies[] = $hobbies;
+        $this->langues[] = $langues;
     
         return $this;
     }
 
     /**
-     * Remove hobbies
+     * Remove langues
      *
-     * @param \MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies
+     * @param \MyFuckinJob\SiteBundle\Entity\Languages $langues
      */
-    public function removeHobbie(\MyFuckinJob\SiteBundle\Entity\Hobbies $hobbies)
+    public function removeLangue(\MyFuckinJob\SiteBundle\Entity\Languages $langues)
     {
-        $this->hobbies->removeElement($hobbies);
+        $this->langues->removeElement($langues);
     }
 
     /**
-     * Get hobbies
+     * Get langues
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getHobbies()
+    public function getLangues()
     {
-        return $this->hobbies;
+        return $this->langues;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param boolean $gender
+     * @return Demandeur
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return boolean 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set entreprise
+     *
+     * @param string $entreprise
+     * @return Demandeur
+     */
+    public function setEntreprise($entreprise)
+    {
+        $this->entreprise = $entreprise;
+    
+        return $this;
+    }
+
+    /**
+     * Get entreprise
+     *
+     * @return string 
+     */
+    public function getEntreprise()
+    {
+        return $this->entreprise;
+    }
+
+    /**
+     * Get seminaire
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSeminaire()
+    {
+        return $this->seminaire;
+    }
+
+    /**
+     * Add seminaire
+     *
+     * @param \MyFuckinJob\SiteBundle\Entity\Reservations $seminaire
+     * @return Demandeur
+     */
+    public function addSeminaire(\MyFuckinJob\SiteBundle\Entity\Reservations $seminaire)
+    {
+        $this->seminaire[] = $seminaire;
+    
+        return $this;
+    }
+
+    /**
+     * Remove seminaire
+     *
+     * @param \MyFuckinJob\SiteBundle\Entity\Reservations $seminaire
+     */
+    public function removeSeminaire(\MyFuckinJob\SiteBundle\Entity\Reservations $seminaire)
+    {
+        $this->seminaire->removeElement($seminaire);
+    }
+
+    /**
+     * Set level
+     *
+     * @param integer $level
+     * @return Demandeur
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    
+        return $this;
+    }
+
+    /**
+     * Get level
+     *
+     * @return integer 
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * Set isShop
+     *
+     * @param boolean $isShop
+     * @return Demandeur
+     */
+    public function setIsShop($isShop)
+    {
+        $this->isShop = $isShop;
+    
+        return $this;
+    }
+
+    /**
+     * Get isShop
+     *
+     * @return boolean 
+     */
+    public function getIsShop()
+    {
+        return $this->isShop;
+    }
+
+    /**
+     * Set urlShop
+     *
+     * @param string $urlShop
+     * @return Demandeur
+     */
+    public function setUrlShop($urlShop)
+    {
+        $this->urlShop = $urlShop;
+    
+        return $this;
+    }
+
+    /**
+     * Get urlShop
+     *
+     * @return string 
+     */
+    public function getUrlShop()
+    {
+        return $this->urlShop;
     }
 }

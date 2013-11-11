@@ -4,18 +4,12 @@ namespace MyFuckinJob\SiteBundle\Controller;
 
 use MyFuckinJob\SiteBundle\Form\Type\DemandeurStep3Type;
 use MyFuckinJob\SiteBundle\Form\Type\MetierType;
+use MyFuckinJob\SiteBundle\Form\Type\MoreThingType;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use MyFuckinJob\SiteBundle\Entity\Demandeur;
-use MyFuckinJob\SiteBundle\Document\Notifications;
-use MyFuckinJob\SiteBundle\Entity\DemandeurHoraires;
-use MyFuckinJob\SiteBundle\Entity\Experience;
 use MyFuckinJob\SiteBundle\Form\Type\DemandeurType;
-use MyFuckinJob\SiteBundle\Form\Type\DemandeurHorairesType;
-use MyFuckinJob\SiteBundle\Form\Type\DemandeurExtrasType;
-use MyFuckinJob\SiteBundle\Form\Type\ExperienceType;
+use MyFuckinJob\SiteBundle\Form\Type\RemisesType;
 use Symfony\Component\HttpFoundation\Response;
-use MyFuckinJob\SiteBundle\Entity\DemandeurSkill;
-use Doctrine\Common\Collections\ArrayCollection;
 
 
 use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
@@ -166,14 +160,15 @@ class DemandeursController extends ContainerAware
         $session = $request->getSession();
 
         $user = $this->container->get('security.context')->getToken()->getUser();
-        if ($user != "anon.") {
-            $this->session->getFlashBag()->add('error', 'Veillez vous déconnecter afin de créer un profil');
-            return new RedirectResponse($this->container->get('router')->generate('inscription'));
-        }
+//        if ($user != "anon.") {
+//            $this->session->getFlashBag()->add('error', 'Veillez vous déconnecter afin de créer un profil');
+//            return new RedirectResponse($this->container->get('router')->generate('inscription'));
+//        }
+//        $place = $session->get('place');
 
-        $place = $session->get('place');
         $user = new Demandeur();
         $form = $this->container->get('form.factory')->createBuilder(new DemandeurType($user), $user)->getForm();
+        $form2 = $this->container->get('form.factory')->createBuilder(new RemisesType())->getForm();
 
         $form->handleRequest($request);
 
@@ -185,47 +180,35 @@ class DemandeursController extends ContainerAware
                 if (count($errors) != 0)
                     foreach ($errors as $error){
                         $session->getFlashBag()->add('error', $error->getMessage());
-                        return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription.html.twig', array('form' => $form->createView()));
+                        return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription.html.twig', array(
+                            'form' => $form->createView(),
+                            'form2' => $form2->createView()
+                        ));
                     }
-//                         return new Response($error->getMessage(), 200, array('Content-Type' => 'application/json'));
-                $firstname = $form['firstname']->getData();
-                $lastname = $form['lastname']->getData();
+//                return new Response($error->getMessage(), 200, array('Content-Type' => 'application/json'));
+//
+                $ville = $form['ville']->getData();
                 $mdp = $form['password']->getData();
-
-//                $dob = $form['dob']->getData();
-//                $tel = $form['tel']->getData();
-//                $cgu = $form['cgu']->getData();
-//                $optin = $form['optin']->getData();
-//                $ville = $form['ville']->getData();
-
-//                $villesproxymite = $em->getRepository('MyFuckinJobSiteBundle:Villes')->findIdByVilleAndZipcode($ville);
-//                if (!empty($villesproxymite)) {
-//                    $villesproxymite = $villesproxymite[0];
-//                    $session->set('place', $villesproxymite->getNomVille());
-//                    $user->setVille($villesproxymite->getNomVille());
-//                    $user->setZipcode($villesproxymite->getCodePostal());
-//                    $user->setLongitude($villesproxymite->getLongitude());
-//                    $user->setLatitude($villesproxymite->getLatitude());
-//                }
-
-//                $user->setGender($gender);
-//                $user->setDob($dob);
-//                $user->setTel($tel);
-//                $user->setOptin($optin);
-
-                $user->setFirstname($firstname);
-                $user->setLastname($lastname);
-                $user->setIp($this->container->get('request')->getClientIp());
-
                 $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
                 $newpass = $encoder->encodePassword($mdp, $user->getSalt());
                 $user->setPassword($newpass);
+                $villesproxymite = $em->getRepository('MyFuckinJobSiteBundle:Villes')->findIdByVilleAndZipcode($ville);
+                if (!empty($villesproxymite)) {
+                    $villesproxymite = $villesproxymite[0];
+                    $session->set('place', $villesproxymite->getNomVille());
+                    $user->setVille($villesproxymite->getNomVille());
+                    $user->setZipcode($villesproxymite->getCodePostal());
+                    $user->setLongitude($villesproxymite->getLongitude());
+                    $user->setLatitude($villesproxymite->getLatitude());
+                }
+
+                $user->setIp($this->container->get('request')->getClientIp());
 
                 $em->persist($user);
                 $em->flush();
 
                 $session->set('uid', $user->getId());
-//                $session->set('ville', $ville);
+                $session->set('ville', $ville);
 
                 //send email confirmation
 //                $this->email = $this->container->get('fuckin_email');
@@ -237,14 +220,18 @@ class DemandeursController extends ContainerAware
 //                    'lastname' => $user->getLastname(),
 //                );
 //                $this->email->send('contact@myfuckinjob.com', 'MyFuckinJobSiteBundle:Mails:inscription.html.twig', "Demande de confirmation d’inscription", $user->getEmail(), null, $datas, null, 'http://bateau.weekinsport.fr');
-                $session->getFlashBag()->add('success', 'Votre profil est à complété');
-                return new RedirectResponse($this->container->get('router')->generate('inscription_etape2'));
+                $session->getFlashBag()->add('success', 'Bienvenue nouvel adhérant!');
+                return new RedirectResponse($this->container->get('router')->generate('home'));
 
             }
 //            return new Response('false', 200, array('Content-Type' => "application/json"));
 //        }
 
-        return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription.html.twig', array('form' => $form->createView()));
+        return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription.html.twig',
+            array(
+                'form' => $form->createView(),
+                'form2' => $form2->createView(),
+            ));
     }
 
 
@@ -330,6 +317,7 @@ class DemandeursController extends ContainerAware
         }
 
         $form2 = $this->container->get('form.factory')->createBuilder(new MetierType($user),$user)->getForm();
+        $form3 = $this->container->get('form.factory')->createBuilder(new MoreThingType($user),$user)->getForm();
 
 
         if ('POST' === $request->getMethod()) {
@@ -347,6 +335,7 @@ class DemandeursController extends ContainerAware
         return $this->container->get('templating')->renderResponse('MyFuckinJobSiteBundle:Demandeurs:inscription_step3.html.twig', array(
             'form' => $form->createView(),
             'form2' => $form2->createView(),
+            'form3' => $form3->createView(),
             'user' => $user ));
     }
 

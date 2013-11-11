@@ -1,12 +1,98 @@
 {% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style type="text/css">
+        #cover{
+            max-width: 100%;
+            width: auto;
+            box-sizing: border-box;
+            height: auto;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        // Récupère le div qui contient la collection de tags
+        var collectionHolder = $('ul.experiences');
+        var collectionHolder2 = $('ul.formations');
+        var collectionHolder3 = $('ul.certificates');
+        var collectionHolder4 = $('ul.hobbies');
+
+        // ajoute un lien « add a tag »
+        var $addTagLink = $('<a href="#" class="add_tag_link btn btn-warning btn-medium">Ajouter</a>');
+        var $newLinkLi = $('<li></li>').append($addTagLink);
+
+        jQuery(document).ready(function() {
+
+            collectionHolder.find('li').each(function() {
+                addTagFormDeleteLink($(this));
+            });
+
+            collectionHolder2.find('li').each(function() {
+                addTagFormDeleteLink($(this));
+            });
+
+            collectionHolder3.find('li').each(function() {
+                addTagFormDeleteLink($(this));
+            });
+
+            collectionHolder4.find('li').each(function() {
+                addTagFormDeleteLink($(this));
+            });
+
+            function addTagFormDeleteLink($tagFormLi) {
+                var $removeFormA = $('<a href="#" class="btn btn-warning btn-medium">Supprimer</a>');
+                $tagFormLi.append($removeFormA);
+
+                $removeFormA.on('click', function(e) {
+                    // empêche le lien de créer un « # » dans l'URL
+                    e.preventDefault();
+
+                    // supprime l'élément li pour le formulaire de tag
+                    $tagFormLi.remove();
+                });
+            }
+            function addTagForm(collectionHolder, $newLinkLi) {
+                // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+                var prototype = collectionHolder.attr('data-prototype');
+
+                // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+                // la longueur de la collection courante
+                var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+
+                // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
+                var $newFormLi = $('<li></li>').append(newForm);
+                $newLinkLi.before($newFormLi);
+                addTagFormDeleteLink($newFormLi);
+            }
+
+            // ajoute l'ancre « ajouter un tag » et li à la balise ul
+            collectionHolder.append($newLinkLi);
+
+            $addTagLink.on('click', function(e) {
+                // empêche le lien de créer un « # » dans l'URL
+                e.preventDefault();
+
+                // ajoute un nouveau formulaire tag (voir le prochain bloc de code)
+                addTagForm(collectionHolder, $newLinkLi);
+            });
+        });
+    </script>
+{% endblock %}
+
+
 {% block content %}
-    <img src="/images/cover.jpg" />
+    <a class="btn btn-warning">Publier mon profil</a>
+
+    <img src="/images/cover.jpg" id="cover" />
+    <a class="btn btn-warning pull-right">Changer de couverture</a>
     <h1><span class="fui-plus"></span> Profil</h1>
     <h3>Infos:</h3>
     <p>Prénom: {{ user.firstname|title}}</p>
     <p>Nom: {{ user.lastname|title }}</p>
-    <p>Titre: <strong>{{ user.metier.title|title }}</strong></p>
     <p>Age: {{ user.age }} ans</p>
     <p>Ville: {{ user.ville }}</p>
 
@@ -27,37 +113,44 @@
             </p>
         </div>
     </div>
-    <h3>Mes derniers jobs</h3>
+    <h3>Réseaux</h3>
     <ul>
+        <li><a href=""><img src="http://icons.iconarchive.com/icons/fasticon/iphone-style-social/24/FaceBook-icon.png" /></a></li>
+        <li><a href=""><img src="https://club.nintendo.com/img/global/twitter_icon.png" /></a></li>
+        <li><a href=""><img src="http://www.linguaproduction.com/kolibri/images/reseaux-sociaux/Bookmark%20Icons%20Google%20Plus.png" /></a></li>
+    </ul>
+    <h3>Mes derniers jobs</h3>
+    <ul class="experiences" data-prototype="{{ form_widget(form.experiences.vars.prototype)|e }}">
         {% for experience in user.experiences %}
             <li>{{ experience.title }}</li>
         {% endfor %}
     </ul>
     <h3>Mes formations</h3>
-    <ul>
+    <ul class="formations" data-prototype="{{ form_widget(form.formations.vars.prototype)|e }}">
         {% for formation in user.formations %}
             <li>{{ formation.title }}</li>
         {% endfor %}
     </ul>
     <h3>Mes certificats</h3>
-    <ul>
+    <ul class="certificates" data-prototype="{{ form_widget(form.certificates.vars.prototype)|e }}">
         {% for certificat in user.certificates %}
             <li>{{ certificat.title }}</li>
         {% endfor %}
     </ul>
     <h3>Mes hobbies</h3>
-    <ul>
+    <ul class="hobbies" data-prototype="{{ form_widget(form.hobbies.vars.prototype)|e }}">
         {% for hobbie in user.hobbies %}
             <li>{{ hobbie.title }}</li>
         {% endfor %}
     </ul>
     <h3>Mes caractères</h3>
-          {{ user.characters }}
+          <div class="clear badge badge-warning">{{ user.characters }}</div>
     <h3>Mes langues</h3>
-    <ul>
-        {% for language in user.languages %}
-            <li>{{ language.frenchName|title }}</li>
+        {% for langue in user.langues %}
+        <div class="alert">{{ langue.frenchName|title }}</div>
         {% endfor %}
-    </ul>
+    <h3>One more thing?</h3>
+    {{ user.extras }}
+    {{ form(form3) }}
 {% endblock %}
 

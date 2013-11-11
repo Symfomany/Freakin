@@ -35,6 +35,10 @@ class Languages {
     protected $frenchName;
 
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Demandeur", inversedBy="langues")
+     */
+    private $demandeurs;
 
     /**
      * Get id
@@ -90,5 +94,45 @@ class Languages {
     public function getFrenchName()
     {
         return $this->frenchName;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->demandeurs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add demandeurs
+     *
+     * @param \MyFuckinJob\SiteBundle\Entity\Demandeur $demandeurs
+     * @return Languages
+     */
+    public function addDemandeur(\MyFuckinJob\SiteBundle\Entity\Demandeur $demandeurs)
+    {
+        $this->demandeurs[] = $demandeurs;
+    
+        return $this;
+    }
+
+    /**
+     * Remove demandeurs
+     *
+     * @param \MyFuckinJob\SiteBundle\Entity\Demandeur $demandeurs
+     */
+    public function removeDemandeur(\MyFuckinJob\SiteBundle\Entity\Demandeur $demandeurs)
+    {
+        $this->demandeurs->removeElement($demandeurs);
+    }
+
+    /**
+     * Get demandeurs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDemandeurs()
+    {
+        return $this->demandeurs;
     }
 }

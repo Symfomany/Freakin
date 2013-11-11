@@ -34,4 +34,65 @@ class Languages {
      */
     protected $frenchName;
 
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Demandeur", inversedBy="languages")
+     */
+    private $demandeurs;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set englishName
+     *
+     * @param string $englishName
+     * @return Languages
+     */
+    public function setEnglishName($englishName)
+    {
+        $this->englishName = $englishName;
+    
+        return $this;
+    }
+
+    /**
+     * Get englishName
+     *
+     * @return string 
+     */
+    public function getEnglishName()
+    {
+        return $this->englishName;
+    }
+
+    /**
+     * Set frenchName
+     *
+     * @param string $frenchName
+     * @return Languages
+     */
+    public function setFrenchName($frenchName)
+    {
+        $this->frenchName = $frenchName;
+    
+        return $this;
+    }
+
+    /**
+     * Get frenchName
+     *
+     * @return string 
+     */
+    public function getFrenchName()
+    {
+        return $this->frenchName;
+    }
 }

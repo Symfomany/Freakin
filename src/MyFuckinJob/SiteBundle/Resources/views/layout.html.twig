@@ -66,36 +66,39 @@
                         <li {% if app.request.attributes.get('_route') == 'home' %}class="active"{% endif %}><a href="{{ path('home') }}">Home</a></li>
                         <li {% if app.request.attributes.get('_route') == 'inscription' %}class="active"{% endif %}><a href="{{ path('inscription') }}">Inscription</a></li>
                         <li {% if app.request.attributes.get('_route') == 'myaccount' %}class="active"{% endif %}><a href="{{ path('myaccount') }}">Profil</a></li>
-                        <li {% if app.request.attributes.get('_route') == 'myquestions' %}class="active"{% endif %}><a href="{{ path('myquestions') }}">Questions</a></li>
-                        <li {% if app.request.attributes.get('_route') == 'myentretiens' %}class="active"{% endif %}><a href="{{ path('myentretiens') }}">Entretiens</a></li>
-                        <li {% if app.request.attributes.get('_route') == 'mydisponibilites' %}class="active"{% endif %}><a href="{{ path('mydisponibilites') }}">Disponibilités</a></li>
-                        <li {% if app.request.attributes.get('_route') == 'myrecherche' %}class="active"{% endif %}><a href="{{ path('myrecherche') }}">Recherche</a></li>
-                        <li {% if app.request.attributes.get('_route') == 'mypreferences' %}class="active"{% endif %}><a href="{{ path('mypreferences') }}">Préférences</a></li>
+                        {#<li {% if app.request.attributes.get('_route') == 'myquestions' %}class="active"{% endif %}><a href="{{ path('myquestions') }}">Questions</a></li>#}
+                        {#<li {% if app.request.attributes.get('_route') == 'myentretiens' %}class="active"{% endif %}><a href="{{ path('myentretiens') }}">Entretiens</a></li>#}
+                        {#<li {% if app.request.attributes.get('_route') == 'mydisponibilites' %}class="active"{% endif %}><a href="{{ path('mydisponibilites') }}">Disponibilités</a></li>#}
+                        {#<li {% if app.request.attributes.get('_route') == 'myrecherche' %}class="active"{% endif %}><a href="{{ path('myrecherche') }}">Recherche</a></li>#}
+                        {#<li {% if app.request.attributes.get('_route') == 'mypreferences' %}class="active"{% endif %}><a href="{{ path('mypreferences') }}">Préférences</a></li>#}
                     </ul>
-                </div><!--/.nav-collapse -->
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" placeholder="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-success">Connectez-vous</button>
+                    </form>
+                </div>
             </div>
         </div>
     {% endblock %}
-        {% block wrapper %}
+    {% block wrapper %}
             <div class="container">
                 <div style="padding-top: 70px">
-                    <ul class="nav nav-pills pull-right">
-                        <li class="active"><a href="/">Home</a></li>
-                        {% if app.user.id is defined %}
-                            <li><a href="#">Mon Compte</a></li>
-                        {% else %}
-                            <li><a href="/logout">Inscription</a></li>
-                        {% endif %}
-                        {% if app.user.id is defined %}
-                            <li><a href="/logout">Déconnexion</a></li>
-                        {% else %}
-                            <li><a href="/logout">Connexion</a></li>
-                        {% endif %}
-                    </ul>
-                    {% include "MyFuckinJobSiteBundle:Slot:flashdatas.html.twig" %}
-                    {% block content %}
-                    {% endblock %}
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            {#{{ render(controller('MyFuckinJobSiteBundle:Layout:topmenu', {  })) }}#}
+                            {% include "MyFuckinJobSiteBundle:Slot:flashdatas.html.twig" %}
+                            {% block content %}
+                            {% endblock %}
+                            {#{{ render(controller('MyFuckinJobSiteBundle:Layout:bottomBrand', {  })) }}#}
+                        </div>
                 </div>
+            </div>
             </div>
         {% endblock %}
 
@@ -122,9 +125,9 @@
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
         <script type="text/javascript" src="http://labs.bigroomstudios.com/source/js/apprise-v2.js"></script>
 
-        {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/main.coffee' filter='closure' %}
-        <script src="{{ asset_url }}" type="text/javascript"></script>
-        {% endjavascripts %}
+        {#{% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/main.coffee' filter='closure' %}#}
+        {#<script src="{{ asset_url }}" type="text/javascript"></script>#}
+        {#{% endjavascripts %}#}
 
 
     {% endblock %}

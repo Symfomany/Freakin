@@ -1,7 +1,5 @@
-{% extends 'MyFuckinJobSiteBundle::layout.html.twig' %}
-
 {% block content %}
-    <h2><span class="fui-plus"></span> Inscription</h2>
+    <h2><span class="fui-plus"></span> Inscription d'un formateur</h2>
     <div class="offset1">
         <form action="{{ path('inscription_recruteur') }}"  method="post" id="inscription" novalidate="novalidate">
             <div class="row">
@@ -66,25 +64,5 @@
         </form>
     </div>
 {% endblock %}
-
-
-
-
-{#Css And JS Files#}
-{% block stylesheets %}
-    {{ parent() }}
-    {% stylesheets
-    '@MyFuckinJobSiteBundle/Resources/public/css/sass/index.sass' filter='yui_css' %}
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
-    {% endstylesheets %}
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/inscription-recruteur.coffee' filter='closure' %}
-    <script src="{{ asset_url }}" type="text/javascript"></script>
-    {% endjavascripts %}
-{% endblock %}
-{#End Css And JS Files#}
 
 

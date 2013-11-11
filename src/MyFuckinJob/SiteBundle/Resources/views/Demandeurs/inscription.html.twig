@@ -2,17 +2,182 @@
 
 {% block content %}
 
-    <h2><span class="fui-plus"></span> Inscription étape 1</h2>
+    <div class="jumbotron">
+        <p>FreakinTrain est un organisme de formation crée par des indépendants-experts confirmés dans
+        le but de diffuser ses séminaires dans les grandes villes (Paris, Lyon, Marseille...) autour du web
+        et de ses technologies émergentes.</p>
+        <p>Basé à Paris, la plateforme de réservations de Workshops est en ligne; elle a pour but
+        l'inscription des intéréssés, l'adération sur une session ou un Workshop complet et la gestion de
+        ses réservations dans l'année.</p>
+        <p>Son fer de lance se situe dans l'expertise de solutions Open Source tel que le célèbre CMS
+        Prestashop ou encore le grand framework Symfony 2 déployé sous forme de séminaires dans
+        des lieux atypiques et originaux. Ne pas se cantonner à une partie trop précise mais finaliser un
+        produit à 360° et y prendre du recul fonctionnel avec ouverture avant la fin d'un WorkShop.</p>
+    </div>
+    <h3>Nos Formation</h3>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Inscription étape 1</a></li>
-        <li><a href="#">Inscription étape 2</a></li>
-        <li><a href="#">Inscription étape 3</a></li>
-    </ol>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Prestashop</a></li>
+            <li><a href="#tab2" data-toggle="tab">Symfony 2</a></li>
+            <li><a href="#tab3" data-toggle="tab">UX Design</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
 
+                <ul>
+                    <li>Installation – Déploiement en production avec droits, fichiers intl...</li>
+                    <li> Créer son thème de A – Z (Pages, Bloc,s Modules, Hooks...)</li>
+                    <li> Créer son propre module et le proposer a la Communauté</li>
+                    <li> Migration vers Prestashop à partir d'un autre E-COMMERCE</li>
+                    <li> Choisissez un bon hébergement adaptés et un serveur bien configuré pour une boutique
+                        Prestashop</li>
+                    <li> Theme Mobile & Tricks CSS Responsives</li>
+                    <li> Paiements et Soluctions existantes + Configuration et Sécurité</li>
+                    <li>  Affichage par modules: Implémentation de hooks, d'emplacement etc...</li>
+                    <li>  Localisation / Taxe: Gestion Internationnales de politiques de Taxe, Devises etc...</li>
+                    <li>  Overrider les methodes/modules: Réécrire les comportement FO/ BO</li>
+                    <li>  Design du template en 10/15 Pages (aec Tomtom)</li>
+                    <li>  Les meilleurs modules / fonctionnalités de la Communauté Pretsashop</li>
+                    <li>  Formation Backend entière avec sa customisation et configuration</li>
+                    <li>  Internationalisation avec traductions entière</li>
+                    <li> Gestion les commandes pour un logisticien, administrateur, vendeur</li>
+                    <li> Politique de Transports / Prix pour les transporteurs et taxes</li>
+                    <li> Création d’une fiche produit entière BO / FO</li>
+                    <li> Gestion des Clients/Paniers avecouverture vers les Stats</li>
+                    <li>  Gestion des Magasins/Marques/Fournisseurs des produits</li>
+                    <li>  Gestion des Administration / Employés / Roles / Permissions</li>
+                    <li>  Gestion Images / CMS pages et Catégories CMS</li>
+                    <li>  Gestion des Stats</li>
+                    <li>  Gérer les catégories de produit</li>
+                    <li>  Gérer le Multiboutique et Stock Physique</li>
+                    <li>  Gestion des stocks (Réassorts, etc...)</li>
+                    <li> Gérer des réductions / remises / promotions... tous les actions commerciales possibles</li>
+                    <li> Gestion de librairies tiers SASS, Coffee .. adapté à la créationd de template Prestashop</li>
+                    <li> Quelles sont les bonnes pratiques Prestashop</li>
+                    <li>  Quelles sont les bonnes pratiques face à vos clients (relances, stratégie marketing, etc.)</li>
+                    <li>  que Prestashop propose
+                    <li>  Gréffer une solution de paiments tel que Payb</li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <div id="outline">
+                    <h3>Le programme de la formation Symfony2</h3>
+                    <h4>Jour 1</h4>
+
+                    <ul>
+                        <li>Qu'est-ce qu'un framework de développement ?</li>
+                        <li>Mise à niveau PHP 5.3 et présentation de Symfony2</li>
+                        <li>Composer et installation de Symfony2</li>
+                        <li>Architecture d'un projet</li>
+                        <li>Cheminement d'une requête HTTP</li>
+                        <li>L'environnement de travail de Symfony2</li>
+                        <li>Configurer un projet Symfony2</li>
+                        <li>Concepts clé de l'utilisation de Symfony2
+
+                            <ul>
+                                <li>Autoloader, services et injection de dépendance</li>
+                            </ul>
+                        </li>
+                        <li>Le routing et la gestion des urls</li>
+                        <li>Contrôleur
+
+                            <ul>
+                                <li>le coeur applicatif</li>
+                                <li>Organisation en bundles</li>
+                            </ul>
+                        </li>
+                    </ul><h4>Jour 2</h4>
+
+                    <ul>
+                        <li>La couche "vue" : manipulation de Twig
+
+                            <ul>
+                                <li>Syntaxe Twig</li>
+                                <li>Notion d'héritage</li>
+                                <li>Gestion de la sécurité</li>
+                                <li>Étendre Twig</li>
+                            </ul>
+                        </li>
+                        <li>La couche modèle
+
+                            <ul>
+                                <li>Le concept d'ORM</li>
+                                <li>Doctrine2 en pratique</li>
+                            </ul>
+                        </li>
+                        <li>Bonnes pratiques – standards de développement
+
+                            <ul>
+                                <li>Validation de la qualité du code</li>
+                            </ul>
+                        </li>
+                        <li>Les formulaires
+
+                            <ul>
+                                <li>Validation de données</li>
+                                <li>Création et traitement de formulaires</li>
+                            </ul>
+                        </li>
+                        <li>Symfony2 et performances
+
+                            <ul>
+                                <li>Cache applicatif</li>
+                                <li>Cache HTTP et ESIs</li>
+                            </ul>
+                        </li>
+                    </ul><h4>Jour 3</h4>
+
+                    <ul>
+                        <li>Approche sécuritaire de Symfony2
+
+                            <ul>
+                                <li>Notions de firewall, acl et gestion des droits</li>
+                                <li>Mise en place de FOSUserBundle</li>
+                            </ul>
+                        </li>
+                        <li>Envoi d'emails avec Symfony2</li>
+                        <li>Tests et qualité
+
+                            <ul>
+                                <li>Tests unitaires avec PHPUnit</li>
+                                <li>Tests fonctionnels</li>
+                            </ul>
+                        </li>
+                        <li>Internationalisation</li>
+                        <li>Composants marquants de Symfony2 et bundles tiers</li>
+                        <li>Opérations de mise en production</li>
+                        <li>Bibliographie et ressources pratiques</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <ul>
+                    <li>Iconographie de sites e-commerces</li>
+                    <li>Flat Implémentation</li>
+                    <li>Techniques avancées de crétion de logo</li>
+                    <li>Conception d'un Moodboard/ Zoning</li>
+                    <li>Tricks & Tips pour du bon print: Plaquette, Flyers, Carte de visite...</li>
+                    <li>Templates des différentes pages avec ergonomie avancée</li>
+                    <li>Templating de Marque/Enseigne: Carte de Visites et Flyer pour boutique en ligne</li>
+                    <li>Templating de Emailing avec standards appliqués.</li>
+                    <li>Belle fiche produit</li>
+                    <li>Templating général d’un theme avec moyens de navigation (Menu, Moteur..)</li>
+                    <li>Zoning et Wireframe avec présentation des logiciels, exemples etc...</li>
+                    <li>Moteur de recherche avec facette menu</li>
+                    <li>Template Mobile pour Application ou Boutique Mobile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2><span class="fui-plus"></span> Inscription d'un adhérant</h2>
+
+    <p>Cette étape succèderas aux choix des résas dans le Calendrier</p>
     <div class="offset1">
         <form action="{{ path('inscription') }}"  method="post" id="inscription">
             <div class="row">
+
                 <div class="col-md-4">
                     <div class="form-group">
                         {{ form_widget(form.firstname,{'attr' : { 'class': 'form-control' }}) }}
@@ -25,8 +190,6 @@
                         <span class="input-icon fui-new"></span>
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                        {{ form_widget(form.email,{'attr' : { 'class': 'form-control' }}) }}
@@ -36,74 +199,162 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         {{ form_widget(form.password,{'attr' : { 'class': 'form-control' }}) }}
-                        <span class="input-icon fui-lock"></span>
+                        <span class="input-icon fui-mail"></span>
                     </div>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-primary" id="bosser">Je veux bosser</button>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.ville,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-new"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.ville,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-new"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.entreprise,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-new"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.metier,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-new"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.tel,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.description,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    Quel est votre niveau en PHP?
+                    <div class="form-group">
+                        {{ form_widget(form.level,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    Avez-vous une boutique en ligne?
+                    <div class="form-group">
+                        {{ form_widget(form.isShop,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    Quelle est l'url de votre boutique en ligne?
+                    <div class="form-group">
+                        {{ form_widget(form.urlShop,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                   Acceptez-vous de recevoir la Newsletter FreakinJob
+                    <div class="form-group">
+                        {{ form_widget(form.optin,{'attr' : { 'class': 'form-control' }}) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        {{ form_widget(form.captcha) }}
+                        <span class="input-icon fui-mail"></span>
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="bosser">Je m'inscris</button>
         </form>
-        <hr class="clear" />
-            <a href=""><img src="http://www.ottawacafes.com/images/facebook-connect-button.png?1380893987" /></a>
-            <a href=""><img src="http://blog.logic-immo.com/wp-content/plugins/simple-twitter-connect/images/Sign-in-with-Twitter-darker.png" /></a>
-            <a href=""><img src="http://www.justinclick.com/assets/images/google_connect_button.png" /></a>
-            <a href=""><img style="width: 112px;" src="http://www.keylance.org/sites/default/files/image/linkedin_button.gif" /></a>
+            {#<a href=""><img src="http://www.ottawacafes.com/images/facebook-connect-button.png?1380893987" /></a>#}
+            {#<a href=""><img src="http://blog.logic-immo.com/wp-content/plugins/simple-twitter-connect/images/Sign-in-with-Twitter-darker.png" /></a>#}
+            {#<a href=""><img src="http://www.justinclick.com/assets/images/google_connect_button.png" /></a>#}
+            {#<a href=""><img style="width: 112px;" src="http://www.keylance.org/sites/default/files/image/linkedin_button.gif" /></a>#}
+            {#<a href=""><img style="width: 112px;" src="http://www.123presta.com/images/connectwithviadeo.png" /></a>#}
             <div class="clear"></div>
             {#{{ form_rest(form) }}#}
     </div>
+    <hr class="clear" />
 
-    {#<h3 class="demo-panel-title">Icon <small>(30)</small></h3>#}
-    {#<div class="demo-illustrations">#}
-        {#<div class="demo-content">#}
-            {#<div><img src="/images/icons/svg/toilet-paper.svg" alt="Toilet-Paper"></div>#}
-            {#<div><img src="/images/icons/svg/gift-box.svg" alt="Gift-Box"></div>#}
-            {#<div><img src="/images/icons/svg/pencils.svg" alt="Pensils"></div>#}
-            {#<div><img src="/images/icons/svg/clipboard.svg" alt="Clipboard"></div>#}
-            {#<div><img src="/images/icons/svg/retina.svg" alt="Retina"></div>#}
-            {#<div><img src="/images/icons/svg/compas.svg" alt="Compas"></div>#}
-            {#<div><img src="/images/icons/svg/map.svg" alt="Map"></div>#}
-            {#<div><img src="/images/icons/svg/chat.svg" alt="Chat"></div>#}
-            {#<div><img src="/images/icons/svg/mail.svg" alt="Mail"></div>#}
-            {#<div><img src="/images/icons/svg/book.svg" alt="Book"></div>#}
-            {#<div><img src="/images/icons/svg/calendar.svg" alt="Calendar"></div>#}
-            {#<div><img src="/images/icons/svg/paper-bag.svg" alt="Pocket"></div>#}
-            {#<div><img src="/images/icons/svg/clocks.svg" alt="Watches"></div>#}
-            {#<div><img src="/images/icons/svg/loop.svg" alt="Infinity-Loop"></div>#}
-        {#</div>#}
-    {#</div>#}
-    {#<h3 class="demo-panel-title">Glyphs <small>(30)</small></h3>#}
+    {% include "MyFuckinJobSiteBundle:Demandeurs:calendar.html.twig" %}
+    <hr class="clear" />
 
-    {#<div class="demo-icons">#}
-        {#<div class="demo-content">#}
-            {#<span class="fui-arrow-right"></span>#}
-            {#<span class="fui-arrow-left"></span>#}
-            {#<span class="fui-cmd"></span>#}
-            {#<span class="fui-check-inverted"></span>#}
-            {#<span class="fui-heart"></span>#}
-            {#<span class="fui-plus"></span>#}
-            {#<span class="fui-check"></span>#}
-            {#<span class="fui-cross"></span>#}
-            {#<span class="fui-list"></span>#}
-            {#<span class="fui-new"></span>#}
-            {#<span class="fui-video"></span>#}
-            {#<span class="fui-photo"></span>#}
-            {#<span class="fui-volume"></span>#}
-            {#<span class="fui-time"></span>#}
-            {#<span class="fui-eye"></span>#}
-            {#<span class="fui-chat"></span>#}
-            {#<span class="fui-search"></span>#}
-            {#<span class="fui-user"></span>#}
-            {#<span class="fui-lock"></span>#}
-            {#<span class="fui-gear"></span>#}
-            {#<span class="fui-radio-unchecked"></span>#}
-            {#<span class="fui-radio-checked"></span>#}
-            {#<span class="fui-checkbox-unchecked"></span>#}
-            {#<span class="fui-checkbox-checked"></span>#}
-            {#<span class="fui-calendar-solid"></span>#}
-            {#<span class="fui-pause"></span>#}
-            {#<span class="fui-play"></span>#}
-            {#<span class="fui-check-inverted-2"></span>#}
+    <h3>Je rentre mes coupons / remises</h3>
+    <form action="{{ path('inscription') }}"  method="post" id="inscription">
+        <div class="row">
+            <div class="col-md-4">
+                <label>% de remise</label>
+                {{ form_widget(form2.remise,{'attr' : { 'class': 'form-control' }}) }}
+            </div>
+        </div>
+        <button class="btn btn-warning">Ajouter cette remise</button>
+    </form>
+    <hr class="clear" />
+    <h3>Les salles de conférences mise en avant</h3>
+    {#<div id="myCarousel" class="carousel slide">#}
+        {#<ol class="carousel-indicators">#}
+            {#<li data-target="#myCarousel" data-slide-to="0" class="active"></li>#}
+            {#<li data-target="#myCarousel" data-slide-to="1"></li>#}
+            {#<li data-target="#myCarousel" data-slide-to="2"></li>#}
+            {#<li data-target="#myCarousel" data-slide-to="3"></li>#}
+            {#<li data-target="#myCarousel" data-slide-to="4"></li>#}
+            {#<li data-target="#myCarousel" data-slide-to="5"></li>#}
+        {#</ol>#}
+        {#<!-- Carousel items -->#}
+        {#<div class="carousel-inner">#}
+            {#<div class="active item">#}
+                {#<img src="http://www.abcsalles.com/images/photo/21877_p9220288.jpg">#}
+            {#</div>#}
+            {#<div class="item">#}
+                {#<img src="http://photos.duproprio.com/salle-de-conference-auberge-a-vendre-pohenegamook-quebec-province-large-1749393.jpg">#}
+            {#</div>#}
+            {#<div class="item">#}
+                {#<img src="http://www.afd.fr/webdav/site/afd/shared/PORTAILS/PAYS/REUNION/photos/P2_vue%20salle_comp.JPG">#}
+            {#</div>#}
+            {#<div class="item">#}
+                {#<img src="http://www.grands-sites-ariege.fr/images/gsa/content/30571334ba71550c5adc46f8533df0a37d660346.jpg">#}
+            {#</div>#}
+            {#<div class="item">#}
+                {#<img src="http://www.hotellespasteliers.com/sites/resources/images/IMAG0011.JPG">#}
+            {#</div>#}
+            {#<div class="item">#}
+                {#<img src="http://www.centre-affaires-metropole.fr/files/news/salle-iroise2.jpg">#}
+            {#</div>#}
         {#</div>#}
+        {#<!-- Carousel nav -->#}
+        {#<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>#}
+        {#<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>#}
     {#</div>#}
+
+    <hr class="clear" />
+
+    <h3>Je paye la somme de</h3>
+    <form action="{{ path('inscription') }}"  method="post" id="inscription">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Détail de ma commande</label>
+                <ul>
+                    <li>1 Workshop : 1400e. <strike>(1440)</strike></li>
+                    <li>2 Journée de Workshop : 360 * 2 = 720e.</li>
+                </ul>
+                <div class="">
+                    Total de 1400 + 720 = 2160 euros
+                </div>
+                <img src="http://www.cycles-hb21.com/img/PAYLINE_Logo_Carte_Bancaire_Paiement_Securise.png" class="img-thumbnail img-polaroid pull-right" />
+            </div>
+        </div>
+        <button class="btn btn-warning">Je règle cette somme</button>
+    </form>
+
+    {{ render(controller('MyFuckinJobSiteBundle:Recruteurs:inscription', {  })) }}
 
 
 {% endblock %}
@@ -113,6 +364,11 @@
 {% block stylesheets %}
     {{ parent() }}
     {% stylesheets
+        '@MyFuckinJobSiteBundle/Resources/public/css/fullcalendar.css' filter='yui_css' %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+
+    {% stylesheets
     '@MyFuckinJobSiteBundle/Resources/public/css/sass/inscription.sass' filter='yui_css' %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
     {% endstylesheets %}
@@ -120,8 +376,9 @@
 
 {% block javascripts %}
     {{ parent() }}
-    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/coffee/inscription.coffee' filter='closure' %}
+    {% javascripts '@MyFuckinJobSiteBundle/Resources/public/js/fullcalendar.min.js' %}
     <script src="{{ asset_url }}" type="text/javascript"></script>
     {% endjavascripts %}
+
 {% endblock %}
 {#End Css And JS Files#}

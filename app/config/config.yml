@@ -209,3 +209,5 @@ doctrine_mongodb:
     document_managers:
       default:
         auto_mapping: true
+
+gregwar_captcha: ~
